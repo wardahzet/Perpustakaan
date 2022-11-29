@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Renting extends Model
 {
     use HasFactory;
+
+    public $timestamp = false;
 }

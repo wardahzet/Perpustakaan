@@ -14,8 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('rentings', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->string('isbn_book');
+            $table->unsignedBigInteger('id_rent');
+
+            $table->foreign('isbn_book')->references('isbn')->on('books')->onDelete('cascade');
+            $table->foreign('id_rent')->references('id')->on('rents')->onDelete('cascade');
         });
     }
 

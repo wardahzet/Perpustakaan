@@ -20,9 +20,9 @@ return new class extends Migration
             $table->string('author');
             $table->string('publisher');
             $table->year('year');
-            $table->integer('total');
-            $table->integer('available');
-            $table->boolean('status');
+            $table->string('data');
+            $table->string('cover');
+            $table->string('header');
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

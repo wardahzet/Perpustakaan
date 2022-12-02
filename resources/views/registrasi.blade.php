@@ -14,7 +14,7 @@
         <div class="block bg-white shadow-lg rounded-lg">
           <div class="lg:flex lg:flex-wrap g-0">
           <div
-              class="lg:w-6/12 flex items-center lg:rounded-l-lg rounded-b-lg lg:rounded-bl-none"
+              class="lg:w-6/12 flex items-center lg:rounded-l-lg rounded-b-lg lg:rounded-bl-none" <!-- ini masih bingun rounded bawahnya ke kanan gimana-->
               style="
                 background: url(https://i.ibb.co/cFZdypS/0911rt.png)">
               <div class="text-white px-4 py-6 md:p-12 md:mx-6">

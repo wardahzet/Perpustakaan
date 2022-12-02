@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rentings', function (Blueprint $table) {
-            $table->string('isbn_book');
-            $table->unsignedBigInteger('id_rent');
+        Schema::create('wishlists', function (Blueprint $table) {
+            $table->string('user_email');
+            $table->string('book_isbn');
 
-            $table->foreign('isbn_book')->references('isbn')->on('books')->onDelete('cascade');
-            $table->foreign('id_rent')->references('id')->on('rents')->onDelete('cascade');
+            $table->foreign('user_email')->references('email')->on('users');
+            $table->foreign('book_isbn')->references('isbn')->on('books');
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rentings');
+        Schema::dropIfExists('wishlists');
     }
 };

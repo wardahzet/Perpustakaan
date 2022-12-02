@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('data');
             $table->string('cover');
             $table->string('header');
+            $table->integer('readers');
+            $table->integer('views');
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

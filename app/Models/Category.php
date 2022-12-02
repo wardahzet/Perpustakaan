@@ -10,4 +10,9 @@ class Category extends Model
     use HasFactory;
 
     public $timestamp = false;
+
+    public function book()
+    {
+        return $this->hasMany(Category::class);
+    }
 }

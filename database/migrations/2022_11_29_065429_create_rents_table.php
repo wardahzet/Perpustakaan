@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('user_email');
             $table->string('book_isbn');
-            $table->time('rent_date');
-            $table->time('due_date')->nullable();
+            $table->timestamp('rent_date');
+            $table->timestamp('due_date')->nullable();
             $table->boolean('status');
             
             $table->foreign('book_isbn')->references('isbn')->on('books');

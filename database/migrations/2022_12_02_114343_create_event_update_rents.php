@@ -16,11 +16,12 @@ return new class extends Migration
     {
         DB::unprepared('
         CREATE EVENT due
-            ON SCHEDULE EVERY 1 DAY STARTS `2015-09-01 00:00:00`
+            ON SCHEDULE EVERY 1 DAY
+            STARTS (TIMESTAMP(CURRENT_DATE) + INTERVAL 1 DAY + INTERVAL 1 HOUR)
             ON COMPLETION PRESERVE
             DO
-                UPDATE `rents` SET `due_date` = now();
-                WHERE date_diff(now(), `rent_date`)>3;
+                UPDATE `rents` SET `due_date` = CURRENT_TIMESTAMP()
+                WHERE TIMESTAMPDIFF(DAY, CURRENT_TIMESTAMP(), `rent_date`) > 3;
         ');
     }
 

@@ -17,9 +17,9 @@ return new class extends Migration
         DB::unprepared('
         CREATE TRIGGER update_rent AFTER UPDATE ON `rents` FOR EACH ROW
             BEGIN
-                IF (NEW.status = `done`)
-                    UPDATE `books` SET `readers` = `readers` - 1
-                    WHERE `isbn` = new.isbn;
+                IF NEW.status = "done" THEN
+                    UPDATE `books` SET `readers` = `readers` + 1 WHERE `isbn`= NEW.book_isbn;
+                END IF;
             END
         ');
     }

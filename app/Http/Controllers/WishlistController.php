@@ -18,7 +18,8 @@ class WishlistController extends Controller
                 ->with('count', $count);
     }
     
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $data = $request->all();
         Wishlist::create ([
             'user_email' => $data['user_email'],
@@ -26,7 +27,8 @@ class WishlistController extends Controller
         ]);
     }
 
-    public function destroy(Request $request){
+    public function destroy(Request $request)
+    {
         $data = $request->all();
         Wishlist::where('user_email', $data['user_email'])
                 ->where('book_isbn', $data['book_isbn'])->delete();

@@ -4,11 +4,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  
   @vite('resources/css/app.css')
 </head>
 <body>
   <div class="relative border-solid border-b-2 border-gray-300 py-2">
-    <div class="container flex items-center mx-20  ">
+    <div class="container flex items-center px-20">
       
         <img src="https://i.ibb.co/Q9vPH3J/Rectangle-119.png" alt="">
 
@@ -39,81 +40,49 @@
      </div>
    </div>
     
-    <div class="profile px-10 my-5 ">
-     <div class="container bg bg-yellow-200 px-10 py-5 rounded-lg  ">
-       <div class="name flex py-5">
-         <p class="mr-80 ">Nama Product</p>
-         <p class="ml-auto ">ISBN</p>
-         <p class="ml-auto">Penulis</p>
-         <p class="ml-auto">Penerbit</p>
-         <p class="ml-auto">Kategori</p>
-       </div>
-       <div class="content-1 py-5 flex items-center">
-         <div class="image-1">
-           <img src="https://i.ibb.co/cXzh6hd/Rectangle-115.png" alt="">
+     <div class="content bg-yellow-200 my-10 mx-10 rounded-lg py-5 ">
+    <div class="container  flex px-10 ">
+      <div class="nama-product   w-4/12 py-2 flex justify-center ">Name Product</div>
+      <div class="ISBN   w-2/12 py-2 flex justify-center">ISBN</div>
+      <div class="Penulis   w-2/12 py-2 flex justify-center ">Penulis</div>
+      <div class="Penerbit   w-2/12 py-2 flex justify-center">Penerbit</div>
+      <div class="Kategories   w-2/12 py-2 flex justify-center" >Kategories</div>
+    </div>
 
-         </div>
-         <div class="ml-5">
-           <p>Under The Kitchen Table - Dessy <br> Miladeana</p>
-         </div>
-         <div class="ml-36">
-           <p>9786020664156</p>
-         </div>
-         <div class="ml-28">
-           <p>Dessy Miladeana</p>
-         </div>
-         <div class="ml-36">
-           <p>Erlangga</p>
-         </div>
-         <div class="ml-44">
-           <p>Fiction</p>
-         </div>
-       </div>
-        <div class="content-1 py-5 flex items-center">
-         <div class="image-1">
-           <img src="https://i.ibb.co/nm99syR/123321.png" alt="">
-
-         </div>
-         <div class="ml-5">
-           <p>Ensiklopedia Sains (Dilengkapi <br> 1000 tautan internet)</p>
-         </div>
-         <div class="ml-56">
-           <p>9786022497301</p>
-         </div>
-         <div class="ml-36">
-           <p>Usborne</p>
-         </div>
-         <div class="ml-40">
-           <p>Bhuana Ilmu <br> Populer</p>
-         </div>
-         <div class="ml-44">
-           <p>Encyclopedia</p>
-         </div>
-       </div>
-     </div>
-     
-   </div>
-    <div class="profile px-10 my-5 ">
-     <div class="container bg bg-yellow-200 px-10 py-5 rounded-lg  ">
-       <div class="name flex py-5">
-         <p>Nomor Peminjaman</p>
-         <p class="ml-auto">PIB-25112-AIIS</p>
-       </div>
-       <div class="email flex py-5 ">
-         <p>Tanggal Peminjaman</p>
-         <p class="ml-auto">12-November-2022</p>
-       </div>
-       <div class="no-anggota flex py-5">
-         <p>Tanggal Pengembalian </p>
-         <p class="ml-auto">29-November-2022</p>
-       </div>
-       
-     </div>
-     
-   </div>
-   <div class="bg-[#D9D9D9] flex px-16 py-2">
+    <div class="content ">
+    <div class="container  flex px-10  ">
+      <div class="nama-product  w-4/12 py-5  flex">
+      <div class="image  mr-5">
+        <img src="https://i.ibb.co/M7r1MVM/Rectangle-115.png" alt="">
+      </div>
+      <div class="name-title  flex items-center font-semibold">Under The Kitchen Table - Dessy Miladeana</div>
+      </div>
+      <div class="ISBN   w-2/12 py-5 flex items-center justify-center">9786020664156</div>
+      <div class="Penulis   w-2/12 py-5 flex items-center justify-center">Dessy Miladeana</div>
+      <div class="Penerbit  w-2/12 py-5 flex items-center justify-center">Erlangga</div>
+      <div class="Kategories  w-2/12 py-5 flex justify-center items-center" >Fiction</div>
+    </div>
+    <div class="content ">
+    <div class="container  flex px-10  ">
+      <div class="nama-product  w-4/12 py-5  flex">
+      <div class="image  mr-10">
+        <img src="https://i.ibb.co/h2zb9sd/123321.png" alt="">
+      </div>
+      <div class="name-title   flex items-center font-semibold">Ensiklopedia Sains (Dilengkapi 1000 tautan internet)</div>
+      </div>
+      <div class="ISBN   w-2/12 py-5 flex items-center justify-center">9786022497301</div>
+      <div class="Penulis   w-2/12 py-5 flex items-center justify-center">Usborne</div>
+      <div class="Penerbit   w-2/12 py-5 flex items-center justify-center">Bhuana Ilmu Populer
+</div>
+      <div class="Kategories  w-2/12 py-5 flex justify-center items-center" >Encyclopedia</div>
+    </div>
+  </div>
+  </div>
+  </div>
+  
+    <div class="bg-[#D9D9D9] flex px-16 p-5">
       <div class="button ml-auto">
-        <button type="submit" class="bg-gray-500 px-10 py-3 rounded-xl  bg-[#EA9901] focus:border-solid focus:bg-white focus:border-[#EA9901] focus:border-2" >Check Out</button>
+        <button type="submit" class="bg-gray-500 px-16 py-4 rounded-xl  bg-[#EA9901] focus:border-solid focus:bg-white focus:border-[#EA9901] focus:border-2" >Check Out</button>
       </div>
     </div>
 </body>

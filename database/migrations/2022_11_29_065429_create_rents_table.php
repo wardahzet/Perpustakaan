@@ -15,7 +15,12 @@ return new class extends Migration
     {
         Schema::create('rents', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('user_email');
+            $table->timestamp('rent_date')->nullable();
+            $table->timestamp('dl')->nullable();
+            $table->boolean('status');
+ 
+            $table->foreign('user_email')->references('email')->on('users');
         });
     }
 

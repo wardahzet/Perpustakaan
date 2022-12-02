@@ -14,8 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('books', function (Blueprint $table) {
-            $table->id();
+            $table->string('isbn')->primary();
+            $table->unsignedBigInteger('category_id');
+            $table->string('title');
+            $table->string('author');
+            $table->string('publisher');
+            $table->year('year');
+            $table->string('data');
+            $table->string('cover');
+            $table->string('header');
             $table->timestamps();
+
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Details</title>
+    <title>Rent - Current</title>
     @vite('resources/css/app.css')
 </head>
 <body>
@@ -36,5 +36,34 @@
             </div>
         </div>
     </div>
+</div>
+<div class="flex items-center justify-center border-gray-200 mx-auto py-5 sm:px-6">
+    <div class="mt-4">
+        <nav class="isolate inline-flex -space-x-px shadow-sm" aria-label="Pagination">
+            <a href="#" aria-current="page" class="relative z-10 inline-flex items-center border border-[#EA9901] bg-indigo-50 px-4 py-2 text-sm font-medium text-[#EA9901] focus:z-20">Current</a>
+            <a href="#" class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">History</a>
+        </nav>
+    </div>
+</div>
+<div class="content flex py-5 mb-5 mx-20 border-solid border-black">
+    <div class="image-1 mr-8">
+        <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
+    </div>
+    <div class="image-1 mr-8">
+        <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
+    </div>
+    <div class="image-1 mr-8">
+        <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
+    </div>
+    <div class="image-1 mr-8">
+        <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
+    </div>
+    <div class="image-1 mr-8">
+        <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
+    </div>
+    <div class="image-1 mr-8">
+        <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
+    </div>
+</div>
 </body>
 </html>

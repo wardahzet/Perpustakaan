@@ -14,21 +14,22 @@ class SearchController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request){
+        $data = $request->all();
         $books = Book::all();
-        if ($request['type'] == 'keywords') 
+        if ($data['type'] == 'keywords') 
         {
-            $books = $books->where('title', 'LIKE', '%'.$request['keywords'].'%');
+            $books = $books->where('title', 'LIKE', '%'.$data['keywords'].'%');
         } 
-        else if ($request['type'] == 'categories') 
+        else if ($data['type'] == 'categories') 
         {
-            $category = Category::where('name', $request['keywords'])->name;
+            $category = Category::where('name', $data['keywords'])->name;
             $books = $books->where('category', 'LIKE', '%'.$category.'%');
         } 
-        else if ($request['type'] == 'newbooks') 
+        else if ($data['type'] == 'newbooks') 
         {
             $books = $books->sortBy('created_at');
         } 
-        else if ($request['type'] == 'popular') 
+        else if ($data['type'] == 'popular') 
         {
             $books = $books->sortBy('views');
         } 

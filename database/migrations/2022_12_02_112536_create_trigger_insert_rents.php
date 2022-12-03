@@ -17,7 +17,7 @@ return new class extends Migration
         DB::unprepared('
         CREATE TRIGGER ins_rent AFTER INSERT ON `rents` FOR EACH ROW
             BEGIN
-                DELETE FROM `wishlist` WHERE `user_email` = new.user_email 
+                DELETE FROM `wishlists` WHERE `user_email` = new.user_email 
                     AND `book_isbn` = new.book_isbn;
                 UPDATE `books` SET `readers` = `readers` + 1, `views` = `views` + 1 
                     WHERE `isbn` = new.book_isbn;

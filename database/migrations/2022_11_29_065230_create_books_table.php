@@ -22,7 +22,7 @@ return new class extends Migration
             $table->year('year');
             $table->string('data');
             $table->string('cover');
-            $table->string('header');
+            $table->text('sinopsis');
             $table->integer('readers');
             $table->integer('views');
             $table->timestamps();

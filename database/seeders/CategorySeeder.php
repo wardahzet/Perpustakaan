@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class CategorySeeder extends Seeder
 {
@@ -14,6 +15,14 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        //
+        $data = [
+            [
+             'name' => 'Science',
+             'icon' => 'xxx'],
+            [
+             'name' => 'Computer',
+             'icon' => 'yyy'],
+            ];
+        DB::table('categories')->insert($data);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Rent;
 use App\Models\Wishlist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class WishlistController extends Controller
 {
@@ -13,7 +14,7 @@ class WishlistController extends Controller
     {
         $count = Rent::count();
         $wishes = Wishlist::all();
-        return view('wishlist.index')
+        return view('detailRent')
                 ->with('wishes', $wishes)
                 ->with('count', $count);
     }
@@ -22,7 +23,7 @@ class WishlistController extends Controller
     {
         $data = $request->all();
         Wishlist::create ([
-            'user_email' => $data['user_email'],
+            'user_email' => Auth::user()->email,
             'book_isbn' => $data['book_isbn']
         ]);
     }
@@ -30,7 +31,7 @@ class WishlistController extends Controller
     public function destroy(Request $request)
     {
         $data = $request->all();
-        Wishlist::where('user_email', $data['user_email'])
+        Wishlist::where('user_email', Auth::user()->email)
                 ->where('book_isbn', $data['book_isbn'])->delete();
 
         $count = Rent::count();

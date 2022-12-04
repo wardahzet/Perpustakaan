@@ -151,18 +151,17 @@
   <div class="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 xl:grid-cols-10 gap-8 w-full">
   
   @foreach ($categories as $category)
-  <div
-      class="relative p-4 w-full bg-white rounded-lg overflow-hidden hover:shadow-lg transition duration-300 ease-in-out flex flex-col justify-center items-center"
-      style="min-height: 160px"
-      >
-    <div class="w-16 h-16 bg-gray-100 rounded-lg">
-    <a href="#"><img src="{{$category['icon']}}" alt="Rectangle-99-1" ></a>
+    <div
+        class="relative p-4 w-full bg-white rounded-lg overflow-hidden hover:shadow-lg transition duration-300 ease-in-out flex flex-col justify-center items-center"
+        style="min-height: 160px"
+        >
+      <div class="w-16 h-16 bg-gray-100 rounded-lg">
+      <a href="#"><img src="{{$category['icon']}}" alt="Rectangle-99-1" ></a>
+      </div>
+      <h2 class="mt-2 text-gray-800 text-sm font-semibold line-clamp-1">
+        {{$category['name']}}
+      </h2>
     </div>
-
-    <h2 class="mt-2 text-gray-800 text-sm font-semibold line-clamp-1">
-      {{$category['name']}}
-    </h2>
-  </div>
   @endforeach
   </div>
 

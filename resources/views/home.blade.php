@@ -155,7 +155,7 @@
         style="min-height: 160px"
         >
       <div class="w-16 h-16 bg-gray-100 rounded-lg">
-      <a href="#"><img src="{{$category['icon']}}" alt="Rectangle-99-1" ></a>
+      <a href="search/Category/{{$category->id}}"><img src="{{$category['icon']}}" alt="Rectangle-99-1" ></a>
       </div>
       <h2 class="mt-2 text-gray-800 text-sm font-semibold line-clamp-1">
         {{$category['name']}}
@@ -182,7 +182,7 @@
           @foreach ($newbooks as $newbook)
             <div class="swiper-slide ">
               <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-                <a href="#"><img src="{{$newbook['cover']}}" alt="Rectangle-49" ></a>
+                <a href="search/newbooks"><img src="{{$newbook['cover']}}" alt="Rectangle-49" ></a>
               </div>
             </div>
           @endforeach
@@ -276,7 +276,7 @@
             @foreach ($recommendations as $recommendation)
             <div class="swiper-slide ">
               <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-                <a href="#"><img src="{{$recommendation['cover']}}" alt="Rectangle-49" ></a>
+                <a href="search/recommendations"><img src="{{$recommendation['cover']}}" alt="Rectangle-49" ></a>
               </div>
             </div>
             @endforeach
@@ -372,7 +372,7 @@
           @foreach ($populars as $popular)
             <div class="swiper-slide ">
               <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-                <a href="#"><img src="{{$popular['cover']}}" alt="Rectangle-49" ></a>
+                <a href="search/populars"><img src="{{$popular['cover']}}" alt="Rectangle-49" ></a>
               </div>
             </div>
             @endforeach

@@ -8,30 +8,37 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    public function index(Request $request)
-    {
-        $data = $request->all();
-        $books = Book::all();
-        if ($data['type'] == 'keywords') 
-        {
-            $books = $books->where('title', 'LIKE', '%'.$data['keywords'].'%');
-        } 
-        else if ($data['type'] == 'categories') 
-        {
-            $category = Category::where('name', $data['keywords'])->name;
-            $books = $books->where('category', 'LIKE', '%'.$category.'%');
-        } 
-        else if ($data['type'] == 'newbooks') 
-        {
-            $books = $books->sortBy('created_at');
-        } 
-        else if ($data['type'] == 'popular') 
-        {
-            $books = $books->sortBy('views');
-        } 
-        else 
-            $books = $books->sortBy('readers');
+    protected $books;
 
-        return view('search')->with('books', $books);
+    public function __construct()
+    {
+        $this->books = Book::all();
+    }
+
+    public function keywords($keywords)
+    {
+        $this->books = $this->books->where('title', 'LIKE', '%'.$keywords.'%');
+
+        return view('searchResult')->with('books', $this->books);
+    }
+
+    public function category($keywords)
+    {
+        $this->books = $this->books->where('category_id',$keywords);
+        return view('searchResult')->with('books', $this->books);
+    }
+    public function type($keywords)
+    {
+        if ($keywords == 'newbooks') 
+        {
+            $this->books = $this->books->sortBy('created_at');
+        } 
+        else if ($keywords == 'populars') 
+        {
+            $this->books = $this->books->sortBy('views');
+        } 
+        else if ($keywords == 'recommendations')
+            $this->books = $this->books->sortBy('readers');
+        return view('searchResult')->with('books', $this->books);
     }
 }

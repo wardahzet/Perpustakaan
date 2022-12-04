@@ -28,53 +28,57 @@
                   <h4 class="text-5xl font-bold mt-1 mb-5 pb-1">Let’s Register to Get Another <br>Benefit from E-Library</h4>
                   
                 </div>
-                <form>
+
+
+                <form method="POST" action="{{ route('register') }}>
+                    @csrf
                   <p class="mb-12 font-normal text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                   <div class="mb-4">
-                    <label for="" class="text-md font-medium ">Full Name</label>
+                    <label for="name" class="text-md font-medium ">Full Name</label>
                     <input
                       type="text"
                       class="form-control block w-full px-3 py-3 my-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none"
-                      id="exampleFormControlInput1"/>
+                      id="name"
+                      name="name" :value="old('name')" required autofocus autocomplete="name"/>
+                  </div>
+                  <div class="email">
+                    <label for="email" class="text-md font-medium">Email</label>
+                    <input
+                      type="email"
+                      class="form-control block w-full px-3 py-3 text-base font-normal my-2 text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none"
+                      id="email"
+                      name="email" :value="old('email')" required/>
                   </div>
                   <div class="mb-4">
-                    <label for="" class="text-md font-medium">Email</label>
+                    <label for="telephone" class="text-md font-medium">Phone Number</label>
                     <input
                       type="text"
                       class="form-control block w-full px-3 py-3 text-base font-normal my-2 text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none"
-                      id="exampleFormControlInput1"/>
+                      id="telephone"
+                      name="telephone" required autocomplete="telephone"/>
                   </div>
                   <div class="mb-4">
-                    <label for="" class="text-md font-medium">Phone Number</label>
-                    <input
-                      type="text"
-                      class="form-control block w-full px-3 py-3 text-base font-normal my-2 text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none"
-                      id="exampleFormControlInput1"/>
-                  </div>
-                  <div class="mb-4">
-                    <label for="" class="text-md font-medium">Password</label>
+                    <label for="password" class="text-md font-medium">Password</label>
                     <input
                       type="password"
                       class="form-control block w-full px-3 py-3 text-base font-normal my-2 text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none"
-                      id="exampleFormControlInput1"/>
+                      id="password"
+                      name="password" required autocomplete="new-password"/>
                   </div>
                   <div class="mb-4">
-                    <label for="" class="text-md font-medium">Confirm Password</label>
+                    <label for="password_confirmation" class="text-md font-medium">Confirm Password</label>
                     <input
                       type="password"
                       class="form-control block w-full px-3 py-3 text-base font-normal my-2 text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none"
-                      id="exampleFormControlInput1"/>
+                      id="password_confirmation"
+                      name="password_confirmation" required autocomplete="new-password"/>
                   </div>
                   <br>
                   
                   <div class="text-center pt-1 mb-10 pb-1">
-                    <button
-                      class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3"
-                      type="button"
-                      data-mdb-ripple="true"
-                      data-mdb-ripple-color="light">
-                      Sign up
-                    </button>
+                    <x-jet-button class="ml-4">
+                        {{ __('Register') }}
+                    </x-jet-button>
                     </div>
             
                   <div class="footer flex items-center justify-center text-xs  ">

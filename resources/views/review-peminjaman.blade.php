@@ -13,7 +13,7 @@
       
         <img src="https://i.ibb.co/Q9vPH3J/Rectangle-119.png" alt="">
 
-        <input type="text" class=" block w-6/12 mx-10 h-10 px-4 py-2 text-base bg-gray-100 bg-clip-padding border rounded transition ease-in-out focus:text-gray-700 focus:bg-gray-100 focus:border-[#EA9901] focus:outline-none   input-search bg-white-200 border-solid border-2 border-gray-300 rounded-2xl  text-gray-700" placeholder="search" >
+        <input type="text" class=" block w-6/12 mx-10 h-10 px-4 py-2 text-base bg-gray-100 bg-clip-padding border-rounded transition ease-in-out focus:text-gray-700 focus:bg-gray-100 focus:border-[#EA9901] focus:outline-none   input-search bg-white-200 border-solid border-2 border-gray-300 rounded-2xl  text-gray-700" placeholder="search" >
         <a href="#" class="link-1 mx-5 font-semibold text-base  ">Home</a>
         <a href="#" class="link-2 mx-5 font font-semibold text-base">Rent</a>
       

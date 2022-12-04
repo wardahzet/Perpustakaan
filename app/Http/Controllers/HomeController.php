@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    function index(){
+    public function index(){
         $categories = Category::all();
         $book = Book::all();
         return view('home')

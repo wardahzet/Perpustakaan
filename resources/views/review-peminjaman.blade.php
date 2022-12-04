@@ -20,7 +20,7 @@
     </div>
   </div>
    <div class="profile px-10 my-5 ">
-   <div class="container bg bg-yellow-200 px-10 py-5 rounded-lg  ">
+     <div class="container bg bg-yellow-200 px-10 py-5 rounded-lg  ">
        <div class="name flex py-5">
          <p>Name</p>
          <p class="ml-auto">Alifia Putri Budiyanti</p>
@@ -39,7 +39,8 @@
        </div>
      </div>
    </div>
-   <div class="content bg-yellow-200 my-10 mx-10 rounded-lg py-5 ">
+    
+     <div class="content bg-yellow-200 my-10 mx-10 rounded-lg py-5 ">
     <div class="container  flex px-10 ">
       <div class="nama-product   w-4/12 py-2 flex justify-center ">Name Product</div>
       <div class="ISBN   w-2/12 py-2 flex justify-center">ISBN</div>

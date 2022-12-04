@@ -22,9 +22,7 @@ return new class extends Migration
             $table->year('year');
             $table->string('data');
             $table->string('cover');
-            $table->text('sinopsis');
-            $table->integer('readers');
-            $table->integer('views');
+            $table->string('header');
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

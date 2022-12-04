@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Book;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,8 @@ class BookController extends Controller
                     'cover' => $data['cover'],
                     'header' => $data['header'],
                     'readers' => 0,
-                    'views' => 0
+                    'views' => 0,
+                    'created_at' => Carbon::now(),
                 ]);
         return view('book.index')
                 ->with('book', $book);

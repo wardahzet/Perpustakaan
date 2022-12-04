@@ -20,24 +20,31 @@
                   <h4 class="text-5xl font-bold mt-1 mb-5 pb-1">Welcome Back to <br>E-Library</h4>
                   
                 </div>
-                <form>
+                        @if (session('status'))
+                    <div class="mb-4 font-medium text-sm text-green-600">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
                   <p class="mb-12 font-normal text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                   <div class="mb-4">
-                    <label for="" class="text-md font-medium ">Email</label>
+                    <label for="" email="text-md font-medium ">Email</label>
                     <input
                       type="text"
                       class="form-control block w-full px-3 py-3 my-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none"
-                      id="exampleFormControlInput1"
-                      
+                      id="email"
+                      type="email" name="email" :value="old('email')" required autofocus 
                     />
                   </div>
                   <div class="mb-4">
-                    <label for="" class="text-md font-medium">Password</label>
+                    <label for="password" class="text-md font-medium">Password</label>
                     <input
                       type="password"
                       class="form-control block w-full px-3 py-3 text-base font-normal my-2 text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none"
                       id="exampleFormControlInput1"
-                     
+                      name="password" required autocomplete="current-password" 
                     />
                   </div>
                   
@@ -46,7 +53,7 @@
                   <div class="text-center pt-1 mb-10 pb-1">
                     <button
                       class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3"
-                      type="button"
+                      type="submit"
                       data-mdb-ripple="true"
                       data-mdb-ripple-color="light"
                       
@@ -57,7 +64,7 @@
                     
                   </div>
                   <div class="flex items-center justify-center pb-5 mb-2">
-                    <p class="mb-0 mr-2">Not member ? <a href="#" class="registrasi text-[#EA9901]">Join our team</a> </p>
+                    <p class="mb-0 mr-2">Not member ? <a href="{{ route('register') }}" class="registrasi text-[#EA9901]">Join our team</a> </p>
                 
                   </div>
                   <div class="footer flex items-center justify-center text-xs  ">

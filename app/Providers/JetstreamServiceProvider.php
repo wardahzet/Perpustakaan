@@ -37,6 +37,10 @@ class JetstreamServiceProvider extends ServiceProvider
         Fortify::registerView(function () {
             return view('registrasi');
         });
+        
+        // Fortify::logoutView(function () {
+        //     return view('logout');
+        // });
     }
 
     /**

@@ -30,7 +30,7 @@
                 </div>
 
 
-                <form method="POST" action="{{ route('register') }}>
+                <form method="POST" action="{{ route('register') }}">
                     @csrf
                   <p class="mb-12 font-normal text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                   <div class="mb-4">
@@ -76,9 +76,13 @@
                   <br>
                   
                   <div class="text-center pt-1 mb-10 pb-1">
-                    <x-jet-button class="ml-4">
-                        {{ __('Register') }}
-                    </x-jet-button>
+                    <button
+                        class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3"
+                        type="submit"
+                        data-mdb-ripple="true"
+                        data-mdb-ripple-color="light">
+                        Sign up
+                    </button>
                     </div>
             
                   <div class="footer flex items-center justify-center text-xs  ">

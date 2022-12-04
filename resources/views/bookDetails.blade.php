@@ -39,22 +39,10 @@
 
 <div class="bg-white">
     <div class="pt-6">
-      <nav aria-label="Breadcrumb">
-        <ol role="list" class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-          <li>
-            <div class="flex items-center">
-              <a href="#" class="mr-2 text-sm font-medium text-gray-900">Book Details</a>
-            </div>
-          </li>
-      </nav>
   
       <!-- Cover Image -->
-      <div class="mx-auto mt-6 max-w-2xl sm:px-6 px-4 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-        <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-          <div class="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg ">
-            <img src="https://i.ibb.co/r2Zxg25/image001-118.jpg" alt="Cover" class="h-72 object-cover object-center rounded-lg">
-          </div>
-        </div>
+      <div class= "container mx-auto max-w-7xl px-4 sm:px-6 bg-white-200 rounded-lg mt-5 mb-5">
+        <img class="rounded-2xl bg-gray-100" style="width: 1300px; height: 383px" style="background:url(https://i.ibb.co/r2Zxg25/image001-118.jpg)" alt="Cover" class="h-72 object-cover object-center rounded-lg">
       </div>
   
       <div class="pl-16 px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:pt-16">

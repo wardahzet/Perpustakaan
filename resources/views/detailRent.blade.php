@@ -1,27 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"/>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-    <!-- Please DO NOT remove this line, all link and script tags will be merged to here -->
-
-    <link rel="stylesheet" type="text/css" href="/css/common.css" />
-    <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="/css/tailwind.css" />
-
-    <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/px2code/posize/build/v1.01.0.js"></script>
     @vite('resources/css/app.css')
   </head>
-
   <body>
   <div class="relative bg-white">
         <div class="mx-auto">
@@ -86,8 +66,8 @@
           <div class="Penulis   w-2/12 py-5 flex items-center justify-center">Dessy Miladeana</div>
           <div class="Penerbit  w-2/12 py-5 flex items-center justify-center">Erlangga</div>
           <div class="Kategories  w-1/12 py-5 flex justify-center items-center" >Fiction</div>
-          <div class="Aksi w-1/12 py-20 justify-center items-center">
-            <img src="https://i.ibb.co/1GTR7SJ/trash.png" width="20px" alt="">
+          <div class="button w-1/12 py-20 justify-center items-center">
+            <button type="submit" class="delete bg-[rgb(234,153,1)]-500 px-6 py-2 rounded-xl  bg-[#EA9901] focus:border-solid focus:bg-white focus:border-[#EA9901] focus:border-2" >Delete</button>
           </div>
         </div>
       <div class="content ">
@@ -110,8 +90,8 @@
           </div>
           <div class="Kategories  w-1/12 py-5 flex justify-center items-center" >Encyclopedia</div>
         </div>
-        <div class="Aksi w-1/12 py-20 justify-center items-center">
-          <img src="https://i.ibb.co/1GTR7SJ/trash.png" width="20px" alt="">
+        <div class="button w-1/12 py-20 justify-center items-center">
+            <button type="submit" class="delete bg-[rgb(234,153,1)]-500 px-6 py-2 rounded-xl  bg-[#EA9901] focus:border-solid focus:bg-white focus:border-[#EA9901] focus:border-2" >Delete</button>
         </div>
       </div>
     </div>

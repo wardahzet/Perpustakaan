@@ -17,6 +17,7 @@ use App\Http\Controllers\WishlistController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('dashboard');
+Route::get('/dasboard', [HomeController::class, 'index'])->name('dashboard');
 
 Route::middleware([
     'auth:sanctum',

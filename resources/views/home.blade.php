@@ -34,13 +34,15 @@
     </div>
     <nav class="hidden space-x-10 md:flex">
       <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Home</a>
-      <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Rent</a>
+      <a href="{{ url('rentCurrent') }}" class="text-base font-medium text-gray-500 hover:text-gray-900">Rent</a>
     </nav>
-    <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-      <a href="#" class="inline-flex items-center rounded-md border border-[#EA9901] bg-white px-4 py-2 text-base font-medium text-[#EA9901] shadow-sm hover:bg-gray-300">Register</a>
-      <a href="#" class="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-[#EA9901] -600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-[#BF7D01]">Login</a>
+    <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0" id="profile">
+      <a href="{{ route('register') }}" class="inline-flex items-center rounded-md border border-[#EA9901] bg-white px-4 py-2 text-base font-medium text-[#EA9901] shadow-sm hover:bg-gray-300">Register</a>
+      <a href="{{ route('login') }}" class="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-[#EA9901] -600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-[#BF7D01]">Login</a>
     </div>
   </div>
+
+  
 
   </div>
 <!-- ============================ ======= HERO IMAGE carousel ====================================================================== -->

@@ -15,7 +15,7 @@ class HomeController extends Controller
             ->with('categories', $categories)
             ->with('newbooks', $book->sortBy('created_at'))
             ->with('recommendations', $book->sortBy('readers'))
-            ->with('popular', $book->sortBy('reading'));
+            ->with('populars', $book->sortBy('reading'));
     }
 
 }

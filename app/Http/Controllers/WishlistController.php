@@ -35,7 +35,7 @@ class WishlistController extends Controller
 
         $count = Rent::count();
         $wishes = Wishlist::all();
-        return view('wishlist.index')
+        return view('detailRent')
                 ->with('wishes', $wishes)
                 ->with('count', $count);
     }

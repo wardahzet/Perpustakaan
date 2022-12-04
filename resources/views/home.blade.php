@@ -34,9 +34,9 @@
         </div>
         <nav class="hidden space-x-10 md:flex">
             <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Home</a>
-            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Rent</a>
-            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Wishlist</a>
-            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Profile</a>
+            <a href="{{ route('rents')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Rent</a>
+            <a href="{{ route('wishlist')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Wishlist</a>
+            <a href="{{ route('profile')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Profile</a>
         </nav>
         <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
           <form method="POST" action="{{ route('register') }}">
@@ -150,137 +150,20 @@
   <h2 class="text-2xl font-semibold ">Categories</h2>
   <div class="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 xl:grid-cols-10 gap-8 w-full">
   
+  @foreach ($categories as $category)
   <div
-	   class="computer relative p-4 w-full bg-white rounded-lg overflow-hidden hover:shadow-lg transition duration-300 ease-in-out flex flex-col justify-center items-center"
-	   style="min-height: 160px"
-	   >
-	<div class="w-16 h-16 bg-gray-100 rounded-lg">
-  <a href="#"><img src="https://i.ibb.co/SRTLmrB/Rectangle-84-1.png" alt="Rectangle-84-1" ></a>
-  </div>
-	<h2 class="mt-2 text-gray-800 text-sm font-semibold line-clamp-1">
-  Computer
-	</h2>
-  </div>
+      class="relative p-4 w-full bg-white rounded-lg overflow-hidden hover:shadow-lg transition duration-300 ease-in-out flex flex-col justify-center items-center"
+      style="min-height: 160px"
+      >
+    <div class="w-16 h-16 bg-gray-100 rounded-lg">
+    <a href="#"><img src="{{$category['icon']}}" alt="Rectangle-99-1" ></a>
+    </div>
 
-  <div
-	   class="Dictionary relative p-4 w-full bg-white rounded-lg overflow-hidden hover:shadow-lg transition duration-300 ease-in-out flex flex-col justify-center items-center"
-	   style="min-height: 160px"
-	   >
-	<div class="w-16 h-16 bg-gray-100 rounded-lg">
-  <img src="https://i.ibb.co/RNBnkDT/Rectangle-83-1.png" alt="Rectangle-83-1" ></a>
+    <h2 class="mt-2 text-gray-800 text-sm font-semibold line-clamp-1">
+      {{$category['name']}}
+    </h2>
   </div>
-
-	<h2 class="mt-2 text-gray-800 text-sm font-semibold line-clamp-1">
-  Dictionary
-	</h2>
-  </div>
-
-  <div
-	   class="Music relative p-4 w-full bg-white rounded-lg overflow-hidden hover:shadow-lg transition duration-300 ease-in-out flex flex-col justify-center items-center"
-	   style="min-height: 160px"
-	   >
-	<div class="w-16 h-16 bg-gray-100 rounded-lg">
-  <a href="#"><img src="https://i.ibb.co/DpgbXTS/Rectangle-90-1.png" alt="Rectangle-90-1" ></a>
-  </div>
-
-	<h2 class="mt-2 text-gray-800 text-sm font-semibold line-clamp-1">
-  Music
-	</h2>
-  </div>
-
-  <div
-	   class="Medical relative p-4 w-full bg-white rounded-lg overflow-hidden hover:shadow-lg transition duration-300 ease-in-out flex flex-col justify-center items-center"
-	   style="min-height: 160px"
-	   >
-	<div class="w-16 h-16 bg-gray-100 rounded-lg">
-  <a href="#"><img src="https://i.ibb.co/VmfkRSW/Rectangle-85-1.png" alt="Rectangle-85-1" ></a>
-  </div>
-
-	<h2 class="mt-2 text-gray-800 text-sm font-semibold line-clamp-1">
-  Medical
-	</h2>
-  </div>
-
-  <div
-	   class="Encyclopedia relative p-4 w-full bg-white rounded-lg overflow-hidden hover:shadow-lg transition duration-300 ease-in-out flex flex-col justify-center items-center"
-	   style="min-height: 160px"
-	   >
-	<div class="w-16 h-16 bg-gray-100 rounded-lg">
-  <a href="#"><img src="https://i.ibb.co/hKvBs1f/Rectangle-77-1.png" alt="Rectangle-77-1" ></a>
-  </div>
-
-	<h2 class="mt-2 text-gray-800 text-sm font-semibold line-clamp-1">
-  Encyclopedia
-	</h2>
-  </div>
-
-  <div
-	   class="Fiction relative p-4 w-full bg-white rounded-lg overflow-hidden hover:shadow-lg transition duration-300 ease-in-out flex flex-col justify-center items-center"
-	   style="min-height: 160px"
-	   >
-	<div class="w-16 h-16 bg-gray-100 rounded-lg">
-  <a href="#"><img src="https://i.ibb.co/cyHNwFj/Rectangle-91-1.png" alt="Rectangle-91-1" ></a>
-  </div>
-
-	<h2 class="mt-2 text-gray-800 text-sm font-semibold line-clamp-1">
-  Fiction
-	</h2>
-  </div>
-
-  <div
-	   class="Anthropology relative p-4 w-full bg-white rounded-lg overflow-hidden hover:shadow-lg transition duration-300 ease-in-out flex flex-col justify-center items-center"
-	   style="min-height: 160px"
-	   >
-	<div class="w-16 h-16 bg-gray-100 rounded-lg">
-  <a href="#"><img src="https://i.ibb.co/Csvd9xb/Rectangle-92-1.png" alt="Rectangle-92-1" ></a>
-  </div>
-
-	<h2 class="mt-2 text-gray-800 text-sm font-semibold line-clamp-1">
-  Anthropology
-	</h2>
-  </div>
-
-  <div
-	   class="Science relative p-4 w-full bg-white rounded-lg overflow-hidden hover:shadow-lg transition duration-300 ease-in-out flex flex-col justify-center items-center"
-	   style="min-height: 160px"
-	   >
-	<div class="w-16 h-16 bg-gray-100 rounded-lg">
-  <a href="#"><img src="https://i.ibb.co/RDKTWYx/Rectangle-93-1.png" alt="Rectangle-93-1" ></a>
-  </div>
-
-	<h2 class="mt-2 text-gray-800 text-sm font-semibold line-clamp-1">
-  Science
-	</h2>
-  </div>
-
-  <div
-	   class="Economy relative p-4 w-full bg-white rounded-lg overflow-hidden hover:shadow-lg transition duration-300 ease-in-out flex flex-col justify-center items-center"
-	   style="min-height: 160px"
-	   >
-	<div class="w-16 h-16 bg-gray-100 rounded-lg">
-  <a href="#"><img src="https://i.ibb.co/vJ7Hs3T/Rectangle-98-1.png" alt="Rectangle-98-1" ></a>
-  </div>
-
-	<h2 class="mt-2 text-gray-800 text-sm font-semibold line-clamp-1">
-  Economy
-	</h2>
-  </div>
-
-  <div
-	   class="Sociology relative p-4 w-full bg-white rounded-lg overflow-hidden hover:shadow-lg transition duration-300 ease-in-out flex flex-col justify-center items-center"
-	   style="min-height: 160px"
-	   >
-	<div class="w-16 h-16 bg-gray-100 rounded-lg">
-  <a href="#"><img src="https://i.ibb.co/TPFqBcV/Rectangle-99-1.png" alt="Rectangle-99-1" ></a>
-  </div>
-
-	<h2 class="mt-2 text-gray-800 text-sm font-semibold line-clamp-1">
-  Sociology
-	</h2>
-  </div>
-
-
-</div>
+  @endforeach
   </div>
 
 </div>
@@ -291,76 +174,22 @@
   <div class= "container mx-auto max-w-7xl px-4 sm:px-6 bg-white-200 rounded-lg mb-10">
     <div class="title-bar flex">
     <h2 class="text-2xl font-semibold ">New Books</h2>
-    <div class="button-title ml-auto">
-      <button class="bg-[#EA9901] rounded-2xl px-5 py-1 text-base font-semibold text-white hover:bg-[#BF7D01]">See All</button>
+      <div class="button-title ml-auto">
+        <button class="bg-[#EA9901] rounded-2xl px-5 py-1 text-base font-semibold text-white hover:bg-[#BF7D01]">See All</button>
+      </div>
     </div>
-  </div>
-        <div class="content flex  pb-0 mb-0">
-          <div class="swiper-newBooks !overflow-hidden ">
-          <div class="swiper-wrapper flex  py-10 mb-2">
-          <div class="swiper-slide ">
+    <div class="content flex  pb-0 mb-0">
+      <div class="swiper-newBooks !overflow-hidden ">
+        <div class="swiper-wrapper flex  py-10 mb-2">
+          @foreach ($newbooks as $newbook)
+            <div class="swiper-slide ">
               <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/YPdmQMh/Rectangle-49.png" alt="Rectangle-49" ></a>
+                <a href="#"><img src="{{$newbook['cover']}}" alt="Rectangle-49" ></a>
               </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/7j2Qj0X/Rectangle-32-1.png" alt="" /></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/XYk1Rpd/Rectangle-52.png" alt="Rectangle-52" ></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/Pg9qGB4/Rectangle-51.png" alt="Rectangle-51" ></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/yd2gRy7/Rectangle-53.png" alt="Rectangle-53" ></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/2kdnf7K/Rectangle-65.png" alt="Rectangle-65"></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/YPdmQMh/Rectangle-49.png" alt="Rectangle-49" ></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/7j2Qj0X/Rectangle-32-1.png" alt="" /></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/XYk1Rpd/Rectangle-52.png" alt="Rectangle-52" ></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/Pg9qGB4/Rectangle-51.png" alt="Rectangle-51" ></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/yd2gRy7/Rectangle-53.png" alt="Rectangle-53" ></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/2kdnf7K/Rectangle-65.png" alt="Rectangle-65"></a>
-              </div>
-          </div>
-              
-          </div>
+            </div>
+          @endforeach
         </div>
+      </div>
         </div>
         <div class="max-w-7xl justify-end  sm:flex sm:pr-6 lg:pr-8">
         <button
@@ -446,61 +275,13 @@
       <div class="content flex pb-0 mb-0 ">
           <div class="swiper-rekomendasi !overflow-hidden ">
           <div class="swiper-wrapper flex  py-10 mb-2">
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/8mpYxkB/Rectangle-64.png" alt="Rectangle-64" ></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/QHwBZML/Rectangle-54.png" alt="Rectangle-54" ></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/nsdf0TV/Rectangle-55.png" alt="Rectangle-55" ></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/GQyK0hx/Rectangle-56.png" alt="Rectangle-56" ></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/FB98McP/Rectangle-57.png" alt="Rectangle-57" ></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/wy9T3rG/Rectangle-66.png" alt="Rectangle-66"></a>
-              </div>
-          </div>
+            @foreach ($recommendations as $recommendation)
             <div class="swiper-slide ">
               <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/8mpYxkB/Rectangle-64.png" alt="Rectangle-64" ></a>
+                <a href="#"><img src="{{$recommendation['cover']}}" alt="Rectangle-49" ></a>
               </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/QHwBZML/Rectangle-54.png" alt="Rectangle-54" ></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/nsdf0TV/Rectangle-55.png" alt="Rectangle-55" ></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/GQyK0hx/Rectangle-56.png" alt="Rectangle-56" ></a>
-              </div>
-          </div>
-          <div class="swiper-slide ">
-              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-              <a href="#"><img src="https://i.ibb.co/FB98McP/Rectangle-57.png" alt="Rectangle-57" ></a>
-              </div>
-          </div>
+            </div>
+            @endforeach
               <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
               <a href="#"><img src="https://i.ibb.co/wy9T3rG/Rectangle-66.png" alt="Rectangle-66"></a>
               </div>
@@ -590,6 +371,13 @@
     <div class="content flex  mb-0 pb-0  ">
       <div class="swiper-container !overflow-hidden ">
         <div class="swiper-wrapper flex  py-10 mb-2">
+          @foreach ($populars as $popular)
+            <div class="swiper-slide ">
+              <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
+                <a href="#"><img src="{{$popular['cover']}}" alt="Rectangle-49" ></a>
+              </div>
+            </div>
+            @endforeach
           <div class="swiper-slide ">
                   <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
                   <a href="#"><img src="https://i.ibb.co/RhB7J8f/Rectangle-76.png" alt="Rectangle-76" ></a>

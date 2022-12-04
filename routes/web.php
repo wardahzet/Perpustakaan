@@ -16,7 +16,7 @@ use App\Http\Controllers\WishlistController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('dashboard');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/dasboard', [HomeController::class, 'index'])->name('dashboard');
 
 Route::middleware([
@@ -29,4 +29,7 @@ Route::middleware([
     Route::get('/profile', function () {
         return view('profile');
     })->name('profile');
+
+    Route::get('/logout', [LogoutController::class, 'logout'])->name('loogout');
+        
 });

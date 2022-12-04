@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('rents', function (Blueprint $table) {
             $table->id();
             $table->string('user_email');
-            $table->timestamp('rent_date')->nullable();
-            $table->timestamp('dl')->nullable();
+            $table->string('book_isbn');
+            $table->timestamp('rent_date');
+            $table->timestamp('due_date')->nullable();
             $table->boolean('status');
- 
+             
+            $table->foreign('book_isbn')->references('isbn')->on('books');
             $table->foreign('user_email')->references('email')->on('users');
         });
     }

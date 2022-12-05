@@ -33,14 +33,16 @@ class RentController extends Controller
 
     public function create(Request $request)
     {
-        $data = $request->all();
-        Rent::create([
-                    'user_email' => $data['user_email'],
-                    'book_isbn' => $data['book_isbn'],
-                    'rent_date' => Carbon::now(),
-                    'status' => true,
-                ]);
-        $this->active($request);
+        $datas = $request->all();
+        foreach ($datas as $data){
+            Rent::create([
+                        'user_email' => Auth::user()->email,
+                        'book_isbn' => $data['book_isbn'],
+                        'rent_date' => Carbon::now(),
+                        'status' => true,
+                    ]);
+        }
+        return redirect ('/rent-current');
     }
 
     public function update(Request $request)
@@ -50,7 +52,7 @@ class RentController extends Controller
                 ->update([
                     'status' => 'done',
                     'due_date' => Carbon::now()]);
-        $this->active($request);
+        return redirect ('/rent-history');
     }
 
     public function validation(Request $request) {

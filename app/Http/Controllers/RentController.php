@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Rent;
 use Carbon\Carbon;
+use App\Models\Rent;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -50,5 +51,14 @@ class RentController extends Controller
                     'status' => 'done',
                     'due_date' => Carbon::now()]);
         $this->active($request);
+    }
+
+    public function validation(Request $request) {
+        $data = $request->all();
+        $rent = Wishlist::where('user_email', Auth::user()->email)
+                ->where('book_isbn', $data['isbn']);
+
+                dd($rent);
+        // return view('reviewRent')->with('rent', $rent);
     }
 }

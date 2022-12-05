@@ -92,24 +92,6 @@
           <img src="{{$book['cover']}}" alt="">
       </div>
     @endforeach
-    {{-- <div class="image-1 mr-8">
-      <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
-  </div>
-  <div class="image-1 mr-8">
-      <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
-  </div>
-  <div class="image-1 mr-8">
-      <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
-  </div>
-  <div class="image-1 mr-8">
-      <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
-  </div>
-  <div class="image-1 mr-8">
-      <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
-  </div>
-  <div class="image-1 mr-8">
-      <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
-  </div> --}}
 
 </div>
 

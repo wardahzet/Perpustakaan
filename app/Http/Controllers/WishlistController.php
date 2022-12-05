@@ -14,7 +14,9 @@ class WishlistController extends Controller
     {
         $count = Rent::count();
         $books = Wishlist::where('user_email',Auth::user()->email)->get();
-        return view('detailRent')->with('wishlists', $books);
+        return view('detailRent')
+                ->with('wishlists', $books)
+                ->with('count',$count);
     }
     
     public function store(Request $request)

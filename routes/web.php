@@ -44,7 +44,7 @@ Route::middleware([
     Route::get('/rent-history', [RentController::class, 'history'])->name('renthistory');
     // Route::post('/confirmation')
     Route::get('/logout', [LogoutController::class, 'logout'])->name('loogout');
-        
+    Route::post('/rent/validation', [RentController::class, 'validation'])->name('validation');
 });
 
 Route::middleware([

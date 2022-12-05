@@ -13,8 +13,15 @@
       <div class="xl:w-10/12">
         <div class="block bg-white shadow-lg rounded-lg">
           <div class="lg:flex lg:flex-wrap g-0">
+<<<<<<< Updated upstream
           <div class="lg:w-6/12 flex items-center lg:rounded-l-lg rounded-b-lg lg:rounded-bl-none"
               style="background: url(https://i.ibb.co/cFZdypS/0911rt.png)">
+=======
+          <div
+              class="lg:w-6/12 flex items-center lg:rounded-l-lg rounded-b-lg lg:rounded-bl-none"
+              style="
+                background: url(https://i.ibb.co/cFZdypS/0911rt.png)">
+>>>>>>> Stashed changes
               <div class="text-white px-4 py-6 md:p-12 md:mx-6">
                <!-- masih gabisa rounded border bawah pindah ke kiri -->
               </div>

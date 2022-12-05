@@ -23,6 +23,8 @@ Route::get('/home', [HomeController::class, 'index'])->name('dashboard');
 Route::get('/src/{keyword}', [SearchController::class, 'keyword'])->name('dashboard');
 Route::get('/search/Category/{keyword}', [SearchController::class, 'category'])->name('dashboard');
 Route::get('/search/{keyword}', [SearchController::class, 'type'])->name('dashboard');
+Route::get('/rent-current', [RentController::class, 'active'])->name('rentcurrent');
+Route::get('/rent-history', [RentController::class, 'history'])->name('renthistory');
 
 Route::middleware([
     'auth:sanctum',

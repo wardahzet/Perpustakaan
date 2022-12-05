@@ -41,9 +41,10 @@ Route::middleware([
         
 });
 
-Route::get('/rent-history', function() {
-    return View::make('rentHistory');
-});
-Route::get('/rent-current', function() {
-    return View::make('rentCurrent');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified', 'isadmin'
+])->group(function (){
+    Route::get('/dashboard', [HomeController::class, 'index']);
 });

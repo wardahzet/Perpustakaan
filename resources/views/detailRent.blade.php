@@ -3,6 +3,9 @@
     @vite('resources/css/app.css')
   </head>
   <body>
+    @foreach($wishlists as $wishlist)
+      {{$wislist->books['isbn']}}
+    @endforeach
   <div class="relative bg-white">
         <div class="mx-auto">
             <div class="flex items-center mr-0 ml-0 justify-between border-b-2 border-gray-300 py-6 md:justify-start md:space-x-10">
@@ -29,16 +32,15 @@
             </div>
           </div>
       </div>
-
-    <!-- <div class="halaman-detail flex flex-col bg-white relative overflow-hidden min-h-[1137px]"> -->
     
     <div class="content bg-200 my-10 mx-10">
       <div class="container bg-[rgb(255,250,239)] flex px-10 rounded-lg py-5">
       <div class="checkboks w-1/12 py-2 flex justify-center">
         <form action="" method="">
           <label for=""></label>
-          <input type="checkbox" id="" value="">
-        </form>
+          <input type="checkbox" id="" value=""> 
+        </form> 
+        <!-- masih nyari cara check all -->
       </div>
         <div class="nama-product   w-3/12 py-2 flex justify-center ">Name Product</div>
         <div class="ISBN   w-2/12 py-2 flex justify-center">ISBN</div>
@@ -62,7 +64,7 @@
           </div>
           <div class="name-title  flex items-center font-semibold">Under The Kitchen Table - Dessy Miladeana</div>
           </div>
-          <div class="ISBN   w-2/12 py-5 flex items-center justify-center">9786020664156</div>
+          <div class="ISBN   w-2/12 py-5 flex items-center justify-center">{{$wishlist->books['isbn']}}</div>
           <div class="Penulis   w-2/12 py-5 flex items-center justify-center">Dessy Miladeana</div>
           <div class="Penerbit  w-2/12 py-5 flex items-center justify-center">Erlangga</div>
           <div class="Kategories  w-1/12 py-5 flex justify-center items-center" >Fiction</div>

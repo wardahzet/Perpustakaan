@@ -20,7 +20,7 @@
                   <h4 class="text-5xl font-bold mt-1 mb-5 pb-1">Welcome Back to <br>E-Library</h4>
                   
                 </div>
-                        @if (session('status'))
+                @if (session('status'))
                     <div class="mb-4 font-medium text-sm text-green-600">
                         {{ session('status') }}
                     </div>

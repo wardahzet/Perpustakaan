@@ -1,4 +1,4 @@
-@@ -0,0 +1,254 @@
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,6 +10,7 @@
 </head>
 <body>
   <div class="all flex">
+
      <!-- sidebar -->
      <div class="sidebar bg-white w-2/12">
         <div class="logo border-solid border-2 border-gray-200  h-20 px-5 py-2">
@@ -39,7 +40,6 @@
         </div>
         <div class="image-profile mx-5 flex ">
           <img src="https://i.ibb.co/GRv64Dh/23445.png" alt="" class=" ">
-    
 
 
           

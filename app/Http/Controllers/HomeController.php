@@ -15,7 +15,7 @@ class HomeController extends Controller
         $book = Book::all();
 
         if (Auth::user() != null && Auth::user()->is_admin) {
-            return view('dashboard');
+            return redirect('/dashboard');
         }
 
         return view('home')
@@ -23,6 +23,10 @@ class HomeController extends Controller
             ->with('newbooks', $book->sortBy('created_at'))
             ->with('recommendations', $book->sortBy('readers'))
             ->with('populars', $book->sortBy('reading'));
+    }
+
+    public function dashboard(){
+        return view ('dashboard');
     }
 
 }

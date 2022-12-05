@@ -16,18 +16,17 @@ class RentController extends Controller
         $rent = Rent::find($data['id']);
     }
 
-    public function history(Request $request)
+    public function history()
     {
-        $rent = Rent::where(['user_email', '=', Auth::user()->email],
-                    ['status', '=', false]);
+        $rent = Rent::where('user_email',  Auth::user()->email)
+        ->where('status', false)->get();
         return view('rentHistory')->with('rent', $rent);
     }
 
-    public function active(Request $request)
+    public function active()
     {
-        $data = $request->all();
-        $rent = Rent::where(['user_email', '=', Auth::user()->email],
-                    ['status', '=', true]);
+        $rent = Rent::where('user_email',  Auth::user()->email)
+                ->where('status', true)->get();
         return view('rentCurrent')->with('rent', $rent);
     }
 

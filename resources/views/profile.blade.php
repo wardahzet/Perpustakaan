@@ -112,14 +112,8 @@
                             <span class="ml-auto"><span
                                     class="bg-green-500 py-1 px-2 rounded text-white text-sm">Active</span></span>
                         </li>
-                        <li class="flex items-center py-3">
-                            <span>Member No</span>
-                            <span class="ml-auto">12343212000</span>
-                        </li>
-                        <li class="flex items-center py-3">
-                            <span>Member since</span>
-                            <span class="ml-auto">Des 01, 2022</span>
-                        </li>
+                        
+                        
                     </ul>
                 </div>
                 <!-- End of profile card -->
@@ -143,17 +137,10 @@
                     <div class="text-gray-700">
                         <div class="grid md:grid-cols-2 text-sm">
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">First Name</div>
+                                <div class="px-4 py-2 font-semibold">Name</div>
                                 <div class="px-4 py-2">Lionel</div>
                             </div>
-                            <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Last Name</div>
-                                <div class="px-4 py-2">Messi</div>
-                            </div>
-                            <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Gender</div>
-                                <div class="px-4 py-2">Male</div>
-                            </div>
+                            
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Contact No.</div>
                                 <div class="px-4 py-2">+62 998001001</div>
@@ -168,16 +155,13 @@
                                     <a class="text-blue-800" href="mailto:messi@gmail.com">Messi@gmail.com</a>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Birthday</div>
-                                <div class="px-4 py-2">Jan 01, 2003</div>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>
                 <button
-                        class="block w-full text-base font-semibold text-black bg-[#EA9901] mt-5 py-3 px-8 rounded-full hover:bg-[#BF7D01] focus:outline-none focus:shadow-outline font-medium">Show
-                        Full Information
+                        class="block w-full text-base font-semibold text-white bg-[#EA9901] mt-5 py-3 px-8 rounded-full hover:bg-[#BF7D01] focus:outline-none focus:shadow-outline font-medium">
+                        Edit Profile
                 </button>
                 <!-- End of about section -->
 

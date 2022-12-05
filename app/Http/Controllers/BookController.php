@@ -11,8 +11,8 @@ class BookController extends Controller
     public function index(Request $request)
     {
         $data = $request->all();
-        $book = Book::find($data['isbn']);
-        return view('book.index')
+        $book = Book::where('isbn', $data)->get();;
+        return view('bookDetails')
                 ->with('book', $book);
     }
 

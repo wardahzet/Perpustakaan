@@ -173,6 +173,7 @@
     <div class="title-bar flex">
     <h2 class="text-2xl font-semibold ">New Books</h2>
       <div class="button-title ml-auto">
+        <form action="/search/newbooks">
         <button class="bg-[#EA9901] rounded-2xl px-5 py-1 text-base font-semibold text-white hover:bg-[#BF7D01]">See All</button>
       </div>
     </div>
@@ -182,7 +183,7 @@
           @foreach ($newbooks as $newbook)
             <div class="swiper-slide ">
               <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-                <a href="search/newbooks"><img src="{{$newbook['cover']}}" alt="Rectangle-49" ></a>
+                <a href="/description/{{$newbook['isbn']}}"><img src="{{$newbook['cover']}}" alt="Rectangle-49" ></a>
               </div>
             </div>
           @endforeach

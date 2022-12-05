@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RentController;
 use App\Http\Controllers\LogoutController;
@@ -20,10 +21,10 @@ use App\Http\Controllers\WishlistController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('dashboard');
-Route::get('/src/{keyword}', [SearchController::class, 'keyword'])->name('dashboard');
-Route::get('/search/Category/{keyword}', [SearchController::class, 'category'])->name('dashboard');
-Route::get('/search/{keyword}', [SearchController::class, 'type'])->name('dashboard');
-
+Route::get('/src/{keyword}', [SearchController::class, 'keyword']);
+Route::get('/search/Category/{keyword}', [SearchController::class, 'category']);
+Route::get('/search/{keyword}', [SearchController::class, 'type']);
+Route::get('/description/{id}', [BookController::class, 'index']);
 
 Route::get('/test', function () {
     return view('profile');

@@ -44,7 +44,7 @@
         </div>
         </div>
         <nav class="hidden space-x-10 md:flex">
-            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Home</a>
+            <a href="{{ route('home')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Home</a>
             <a href="{{ route('rents')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Rent</a>
             <a href="{{ route('wishlist')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Wishlist</a>
             <a href="{{ route('profile')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Profile</a>
@@ -75,7 +75,7 @@
         </div>
         </div>
         <nav class="hidden space-x-10 md:flex">
-            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Home</a>
+            <a href="{{ route('home')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Home</a>
         </nav>
         <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0" id="profile">
           <a href="{{ route('register') }}" class="inline-flex items-center rounded-md border border-[#EA9901] bg-white px-4 py-2 text-base font-medium text-[#EA9901] shadow-sm hover:bg-gray-300">Register</a>

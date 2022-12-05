@@ -40,3 +40,10 @@ Route::middleware([
     Route::get('/logout', [LogoutController::class, 'logout'])->name('loogout');
         
 });
+
+Route::get('/rent-history', function() {
+    return View::make('rentHistory');
+});
+Route::get('/rent-current', function() {
+    return View::make('rentCurrent');
+});

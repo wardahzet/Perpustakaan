@@ -40,7 +40,7 @@
 <div class="flex items-center justify-center border-gray-200 mx-auto py-5 sm:px-6">
     <div class="mt-4">
         <nav class="isolate inline-flex -space-x-px shadow-sm" aria-label="Pagination">
-            <a href="#" aria-current="page" class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">Current</a>
+            <a href="{{ url('/rent-current') }}" aria-current="page" class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">Current</a>
             <a href="#" class="relative z-10 inline-flex items-center border border-[#EA9901] bg-indigo-50 px-4 py-2 text-sm font-medium text-[#EA9901] focus:z-20">History</a>
         </nav>
     </div>

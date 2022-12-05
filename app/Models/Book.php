@@ -13,4 +13,9 @@ class Book extends Model
     protected $keyType = 'string';
     public $incrementing = false;
 
+    public function books()
+    {
+        return $this->hasMay(Wishlist::class,'book_isbn');
+    }
+
 }

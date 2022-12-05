@@ -3,6 +3,9 @@
     @vite('resources/css/app.css')
   </head>
   <body>
+    @foreach($wishlists as $wishlist)
+      {{$wislist->books['isbn']}}
+    @endforeach
   <div class="relative bg-white">
         <div class="mx-auto">
             <div class="flex items-center mr-0 ml-0 justify-between border-b-2 border-gray-300 py-6 md:justify-start md:space-x-10">
@@ -30,7 +33,6 @@
           </div>
       </div>
     
-    @foreach ($wishes as $wishlist)
     <div class="content bg-200 my-10 mx-10">
       <div class="container bg-[rgb(255,250,239)] flex px-10 rounded-lg py-5">
       <div class="checkboks w-1/12 py-2 flex justify-center">

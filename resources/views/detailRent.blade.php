@@ -125,7 +125,7 @@
         <button type="submit" class="checkout bg-[rgb(234,153,1)]-500 px-16 py-4 rounded-xl  bg-[#EA9901] focus:border-solid focus:bg-white focus:border-[#EA9901] focus:border-2" >Check Out (-)</button>
       </div>
     </div>
-      
+
     <!-- <script> 
     const displayEl = document.querySelector(".checkout");
     displayEl.addEventListener("click", ()=> { 
@@ -133,6 +133,7 @@
       displayEl.style.display = "none";
     });
     </script> -->
+    <!--
   <body>
   <div class="relative bg-white">
         <div class="mx-auto">
@@ -249,9 +250,9 @@
       <h3
         class="font-semibold text-[20px] leading-normal font-Poppins text-white tracking-[0px] w-fit h-min absolute top-[1069px] left-[1144px] min-w-0">
         Check Out (-)
-      </h3>
+      </h3>-->
     <script type="text/javascript">
-      AOS.init();
-    </script> -->
+      AOS.init(); 
+    </script>
   </body>
 </html>

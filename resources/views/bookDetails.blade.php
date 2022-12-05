@@ -47,7 +47,9 @@
   
       <div class="pl-16 px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:pt-16">
         <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-          <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Teluk Alaska</h1>
+          @foreach ($book as $books)
+          <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{{$books['title']}}</h1>
+          @endforeach
         </div>
   
         <div class="mt-4 lg:row-span-3 lg:mt-0">
@@ -74,8 +76,10 @@
         <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pb-16 lg:pr-8">
           <div>
             <div class="space-y-6">
-              <h2 class="text-sm font-medium text-gray-900">by ekaaryani</h2>
-              <p class="text-base text-justify text-gray-900">Alkisah ada seorang gadis pendiam bernama Anastasia Mhysa. Atas sikapnya itu, bahkan Anastasia tidak memiliki kawan. Ia hanya bercerita di buku diary berwarna pink yang selalu menemaninya kemana pun. Tanpa diketahui oleh seorang pun, sebenarnya Anastasia juga memiliki buku lainnya. Buku ini sangatlah rahasia karena berisi semua rahasia milik Anastasia. Kehidupan gadis ini tidaklah mudah, ia selalu mendapat perundungan dari Tasya dan Cindi. Namun, akhirnya Bulan datang sebagai peneman untuk Anastasia. Kehadiran Bulan membuat Anastasia lebih ceria daripada sebelumnya. Hingga suatu hari, Anastasia bertemu dengan seorang teman masa kecil bernama Alister. Belum terlalu yakin kalau ia adalah teman masa kecil Anastasia, karena Alister memiliki sifat yang jauh berbeda dengan sifatnya yang dulu. Alister yang ia temui saat ini memiliki sikap yang kasar dan perundung. Dari sini, Anastasia pun memutuskan untuk mencari tahu tentang Alister. Anastasia mengikuti Alister sepulang sekolah. Tanpa disangka, ternyata Alister pergi menuju ke makam ayahnya sambil menangis. Melalui peristiwa ini, Anastasia baru menyadari kalau Alister sebenarnya sosok yang rapuh. Lantas, apakah Alister adalah teman masa kecil Anastasia?</p>
+              @foreach ($book as $books)
+              <h2 class="text-sm font-medium text-gray-900">by {{$books['author']}}</h2>
+              <p class="text-base text-justify text-gray-900">{{$books['synopsis']}}</p>
+              @endforeach
               <br><br>
               <a href="#" class="text-base font-semibold text-black bg-[#EA9901] py-3 px-8 rounded-full hover:shadow-lg hover:bg-[#BF7D01]">Add to Cart</a>
             </div>

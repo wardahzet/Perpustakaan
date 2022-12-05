@@ -41,7 +41,7 @@
     <div class="mt-4">
         <nav class="isolate inline-flex -space-x-px shadow-sm" aria-label="Pagination">
             <a href="#" aria-current="page" class="relative z-10 inline-flex items-center border border-[#EA9901] bg-indigo-50 px-4 py-2 text-sm font-medium text-[#EA9901] focus:z-20">Current</a>
-            <a href="#" class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">History</a>
+            <a href="{{ url('/rent-history') }}" class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">History</a>
         </nav>
     </div>
 </div>

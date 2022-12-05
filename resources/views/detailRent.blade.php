@@ -50,7 +50,9 @@
             </div>
           </div>
       </div>
-    
+
+  <form action="/rent/validation" method="post">
+    @csrf
     <div class="content bg-200 my-10 mx-10">
       <div class="container bg-[rgb(255,250,239)] flex px-10 rounded-lg py-5">
       <div class="checkboks w-1/12 py-2 flex justify-center">
@@ -67,8 +69,8 @@
         <div class="Aksi   w-1/12 py-2 flex justify-center" >Aksi</div>
       </div>
       <br>
-      <form action="/rent/validation" method="post">
-        <div class="content">
+
+        <div class="content" name="books[]">
 
         @foreach($wishlists as $wishlist)
         <div class="container bg-[rgb(255,250,239)] flex px-10 rounded-lg ">
@@ -95,27 +97,15 @@
       </div>
     <br>
     <div class="bg-[#D9D9D9] flex px-16 p-5">
-      <div id='submit' class="button ml-auto">
-        <button type="submit" class="checkout bg-[rgb(234,153,1)]-500 px-16 py-4 rounded-xl  bg-[#EA9901] focus:border-solid focus:bg-white focus:border-[#EA9901] focus:border-2" >Check Out (-)</button>
+      <div id='button' class="button ml-auto">
+        
       </div>
-<<<<<<< Updated upstream
-    </div>
-
-    <!-- <script> 
-    const displayEl = document.querySelector(".checkout");
-    displayEl.addEventListener("click", ()=> { 
-      commentsEl.classList.toggle("visible"); 
-      displayEl.style.display = "none";
-    });
-    </script> -->
-    <script type="text/javascript">
-      AOS.init(); 
-    </script>
-=======
     </div> 
+  </form>
     <script>
       let $count = {{$count}};
       console.log($count);
+      set();
       document.querySelectorAll(".check3").forEach(check => {
         check.addEventListener("click", function() {
           if(this.checked) $count++;
@@ -138,16 +128,14 @@
       }
 
       function set() {
-        
-        if($count > 3)
-            document.getElementById("submit").innerHTML = '<button type="submit" class="checkout bg-[rgb(234,153,1)]-500 px-16 py-4 rounded-xl  bg-gray-500 focus:border-solid focus:bg-white focus:border-gray-300 focus:border-2" >Check Out (-)</button>';
+        if($count > 3 || {{$count}}-$count == 0)
+            document.getElementById("button").innerHTML = '<button type="submit" class="checkout bg-[rgb(234,153,1)]-500 px-16 py-4 rounded-xl  bg-gray-500 focus:border-solid focus:bg-white focus:border-gray-300 focus:border-2" disabled >Check Out (-)</button>';
         else
-          document.getElementById("submit").innerHTML = '<button type="submit" class="checkout bg-[rgb(234,153,1)]-500 px-16 py-4 rounded-xl  bg-[#EA9901] focus:border-solid focus:bg-white focus:border-[#EA9901] focus:border-2" >Check Out (-)</button>';
+          document.getElementById("button").innerHTML = '<button type="submit" class="checkout bg-[rgb(234,153,1)]-500 px-16 py-4 rounded-xl  bg-[#EA9901] focus:border-solid focus:bg-white focus:border-[#EA9901] focus:border-2" >Check Out (-)</button>';
       }
 
     </script>
   </form>
   <body>
->>>>>>> Stashed changes
   </body>
 </html>

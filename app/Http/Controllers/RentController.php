@@ -55,10 +55,8 @@ class RentController extends Controller
 
     public function validation(Request $request) {
         $data = $request->all();
-        $rent = Wishlist::where('user_email', Auth::user()->email)
-                ->where('book_isbn', $data['isbn']);
-
-                dd($rent);
-        // return view('reviewRent')->with('rent', $rent);
+        $rents = Wishlist::where('user_email', Auth::user()->email)
+                ->where('book_isbn', $data);
+        return view('review-peminjaman')->with('rent', $rents);
     }
 }

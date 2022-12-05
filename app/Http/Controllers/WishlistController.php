@@ -12,7 +12,7 @@ class WishlistController extends Controller
 
     public function index(Request $request)
     {
-        $count = Rent::count();
+        $count = Wishlist::where('user_email',Auth::user()->email)->count();
         $books = Wishlist::where('user_email',Auth::user()->email)->get();
         return view('detailRent')
                 ->with('wishlists', $books)

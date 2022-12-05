@@ -174,7 +174,8 @@
     <h2 class="text-2xl font-semibold ">New Books</h2>
       <div class="button-title ml-auto">
         <form action="/search/newbooks">
-        <button class="bg-[#EA9901] rounded-2xl px-5 py-1 text-base font-semibold text-white hover:bg-[#BF7D01]">See All</button>
+          <button type="submit" bg-[#EA9901] rounded-2xl px-5 py-1 text-base font-semibold text-white hover:bg-[#BF7D01]">See All</button>
+        </form>
       </div>
     </div>
     <div class="content flex  pb-0 mb-0">
@@ -268,7 +269,9 @@
       <div class="title-bar flex">
         <div class="title text-2xl font-semibold">Recommendations</div>
           <div class="button-title ml-auto">
-            <button class="bg-[#EA9901] rounded-2xl px-5 py-1 text-base font-semibold text-white hover:bg-[#BF7D01] ">See All</button>
+            <form action="/search/recommendations">
+              <button type='sumbit' class="bg-[#EA9901] rounded-2xl px-5 py-1 text-base font-semibold text-white hover:bg-[#BF7D01] ">See All</button>
+            </form>
           </div>
       </div>
       <div class="content flex pb-0 mb-0 ">
@@ -364,7 +367,9 @@
     <div class="title-bar flex">
     <div class="title text-2xl font-semibold  ">Favorites</div>
     <div class="button-title ml-auto">
-      <button class="bg-[#EA9901] rounded-2xl px-5 py-1 text-base font-semibold text-white hover:bg-[#BF7D01]">See All</button>
+      <form action="/search/populars">
+        <button type='sumbit' class="bg-[#EA9901] rounded-2xl px-5 py-1 text-base font-semibold text-white hover:bg-[#BF7D01]">See All</button>
+      </form>
     </div>
     </div>
     <div class="content flex  mb-0 pb-0  ">

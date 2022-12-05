@@ -46,24 +46,11 @@
     </div>
 </div>
 <div class="content flex py-5 mb-5 mx-20 border-solid border-black">
+    @foreach ($rent as $r)
     <div class="image-1 mr-8">
-        <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
+        <img src="{{$r['cover']}}" alt="">
     </div>
-    <div class="image-1 mr-8">
-        <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
-    </div>
-    <div class="image-1 mr-8">
-        <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
-    </div>
-    <div class="image-1 mr-8">
-        <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
-    </div>
-    <div class="image-1 mr-8">
-        <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
-    </div>
-    <div class="image-1 mr-8">
-        <img src="https://i.ibb.co/NtDQHZ5/Rectangle-49.png" alt="">
-    </div>
+    @endforeach
 </div>
 </body>
 </html>

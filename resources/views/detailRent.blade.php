@@ -4,7 +4,7 @@
   </head>
   <body>
     @foreach($wishlists as $wishlist)
-      {{$wislist->books['isbn']}}
+      {{$wishlist->books->category['name']}}
     @endforeach
   <div class="relative bg-white">
         <div class="mx-auto">

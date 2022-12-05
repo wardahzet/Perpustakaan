@@ -182,7 +182,7 @@
           @foreach ($newbooks as $newbook)
             <div class="swiper-slide ">
               <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-                <a href="search/newbooks"><img src="{{$newbook['cover']}}" alt="Rectangle-49" ></a>
+                <a href="/description/{{$newbook['isbn']}}"><img src="{{$newbook['cover']}}" alt="Rectangle-49" ></a>
               </div>
             </div>
           @endforeach
@@ -276,7 +276,7 @@
             @foreach ($recommendations as $recommendation)
             <div class="swiper-slide ">
               <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-                <a href="search/recommendations"><img src="{{$recommendation['cover']}}" alt="Rectangle-49" ></a>
+                <a href="/description/{{$newbook['isbn']}}"><img src="{{$recommendation['cover']}}" alt="Rectangle-49" ></a>
               </div>
             </div>
             @endforeach
@@ -372,7 +372,7 @@
           @foreach ($populars as $popular)
             <div class="swiper-slide ">
               <div class="image-1 mr-8 hover:scale-110 transition duration-300 ease-in-out">
-                <a href="search/populars"><img src="{{$popular['cover']}}" alt="Rectangle-49" ></a>
+                <a href="/description/{{$newbook['isbn']}}"><img src="{{$popular['cover']}}" alt="Rectangle-49" ></a>
               </div>
             </div>
             @endforeach

@@ -13,7 +13,7 @@ class Book extends Model
     protected $keyType = 'string';
     public $incrementing = false;
 
-    public function books()
+    public function wishlist()
     {
         return $this->hasMany(Wishlist::class,'book_isbn');
     }

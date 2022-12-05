@@ -23,9 +23,11 @@ Route::get('/home', [HomeController::class, 'index'])->name('dashboard');
 Route::get('/src/{keyword}', [SearchController::class, 'keyword'])->name('dashboard');
 Route::get('/search/Category/{keyword}', [SearchController::class, 'category'])->name('dashboard');
 Route::get('/search/{keyword}', [SearchController::class, 'type'])->name('dashboard');
-Route::get('/rent-current', [RentController::class, 'active'])->name('rentcurrent');
-Route::get('/rent-history', [RentController::class, 'history'])->name('renthistory');
 
+
+Route::get('/test', function () {
+    return view('profile');
+});
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -36,7 +38,9 @@ Route::middleware([
     Route::get('/profile', function () {
         return view('profile');
     })->name('profile');
-
+    Route::get('/rent-current', [RentController::class, 'active'])->name('rentcurrent');
+    Route::get('/rent-history', [RentController::class, 'history'])->name('renthistory');
+    // Route::post('/confirmation')
     Route::get('/logout', [LogoutController::class, 'logout'])->name('loogout');
         
 });
@@ -46,5 +50,6 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified', 'isadmin'
 ])->group(function (){
-    Route::get('/dashboard', [HomeController::class, 'index']);
+    Route::get('/dashboard', [HomeController::class, 'dashboard']);
+    Route::get('/logout', [LogoutController::class, 'logout'])->name('loogout');
 });

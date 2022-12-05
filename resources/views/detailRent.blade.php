@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< Updated upstream
-=======
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
@@ -21,7 +19,7 @@
     <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="text/javascript" src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/px2code/posize/build/v1.01.0.js"></script>
->>>>>>> Stashed changes
+
     @vite('resources/css/app.css')
   </head>
   <body>
@@ -121,7 +119,6 @@
     </div>
       </div>
 
-<<<<<<< Updated upstream
     <br>
     <div class="bg-[#D9D9D9] flex px-16 p-5">
       <div class="button ml-auto">
@@ -136,8 +133,6 @@
       displayEl.style.display = "none";
     });
     </script> -->
-  
-=======
   <body>
   <div class="relative bg-white">
         <div class="mx-auto">
@@ -164,7 +159,7 @@
               <a href="#" class="mr-8 inline-flex items-center rounded-md border border-[#EA9901] bg-white px-4 py-2 text-base font-medium text-[#EA9901] shadow-sm hover:bg-gray-300">Logout</a>
             </div>
           </div>
-        </div>
+        </div>
 
     <div class="halaman-detail flex flex-col bg-white relative overflow-hidden min-h-[1137px]">
       <div
@@ -255,7 +250,6 @@
         class="font-semibold text-[20px] leading-normal font-Poppins text-white tracking-[0px] w-fit h-min absolute top-[1069px] left-[1144px] min-w-0">
         Check Out (-)
       </h3>
->>>>>>> Stashed changes
     <script type="text/javascript">
       AOS.init();
     </script> -->

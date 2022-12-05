@@ -15,7 +15,12 @@ class Book extends Model
 
     public function books()
     {
-        return $this->hasMay(Wishlist::class,'book_isbn');
+        return $this->hasMany(Wishlist::class,'book_isbn');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class,'category_id');
     }
 
 }

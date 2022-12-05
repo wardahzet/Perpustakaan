@@ -81,7 +81,8 @@
 <div class="content flex py-5 mb-5 mx-20 border-solid border-black">
     @foreach ($rent as $r)
     <div class="image-1 mr-8">
-        <img src="{{$r['cover']}}" alt="">
+        <img src="{{$r->books['cover']}}" alt="">
+
     </div>
     @endforeach
 </div>

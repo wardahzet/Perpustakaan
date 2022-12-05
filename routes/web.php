@@ -28,6 +28,7 @@ Route::get('/search/{keyword}', [SearchController::class, 'type'])->name('dashbo
 Route::get('/test', function () {
     return view('profile');
 });
+<<<<<<< Updated upstream
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -53,3 +54,11 @@ Route::middleware([
     Route::get('/dashboard', [HomeController::class, 'dashboard']);
     Route::get('/logout', [LogoutController::class, 'logout'])->name('loogout');
 });
+=======
+Route::get('/detailRent', function () {
+    return view('detailRent');
+});
+Route::get('/registrasi', function () {
+    return view('registrasi');
+});
+>>>>>>> Stashed changes

@@ -19,7 +19,7 @@ return new class extends Migration
         CREATE TRIGGER update_rent AFTER UPDATE ON `rents` FOR EACH ROW
             BEGIN
                 IF NEW.status = "done" THEN
-                    UPDATE `books` SET `readers` = `readers` + 1 WHERE `isbn`= NEW.book_isbn;
+                    UPDATE `books` SET `readers` = `readers` - 1 WHERE `isbn`= NEW.book_isbn;
                 END IF;
             END
         ');

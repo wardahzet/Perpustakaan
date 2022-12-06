@@ -27,11 +27,7 @@
         </div>
         </div>
         <nav class="hidden space-x-10 md:flex">
-<<<<<<< Updated upstream
-            <a href="{{ route('home')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Home</a>
-=======
             <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">Home</a>
->>>>>>> Stashed changes
             <a href="{{ route('rents')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Rent</a>
             <a href="{{ route('wishlist')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Wishlist</a>
             <a href="{{ route('profile')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Profile</a>
@@ -84,9 +80,8 @@
 </div>
 <div class="content flex py-5 mb-5 mx-20 border-solid border-black">
     @foreach ($rent as $r)
-    <div class="image-1 mr-8">
+    <div class="image-1 mr-8 w-48">
         <img src="{{$r->books['cover']}}" alt="">
-
     </div>
     @endforeach
 </div>

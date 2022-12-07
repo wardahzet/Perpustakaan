@@ -23,7 +23,7 @@
         <div class="flex justify-end">
             
         <div class="container flex items-center">
-          <input type="text" class="block -ml-32 mx-10 w-96 h-10 px-4 py-2 text-base bg-gray-100 bg-clip-padding border rounded transition ease-in-out focus:text-gray-700 focus:bg-gray-100 focus:border-[#EA9901] focus:outline-none   input-search bg-white-200 border-solid border-2 border-gray-300 rounded-2xl  text-gray-700" placeholder="Search" >
+          <input type="text" class="block -ml-32 mx-10 w-96 h-10 px-4 py-2 text-base bg-gray-100 bg-clip-padding border-rounded transition ease-in-out focus:text-gray-700 focus:bg-gray-100 focus:border-[#EA9901] focus:outline-none   input-search bg-white-200 border-solid border-2 border-gray-300 rounded-2xl  text-gray-700" placeholder="Search" >
         </div>
         </div>
         <nav class="hidden space-x-10 md:flex">
@@ -74,11 +74,11 @@
      <div class="container bg bg-yellow-200 px-10 py-5 rounded-lg  ">
        <div class="name flex py-5">
          <p>Name</p>
-         <p class="ml-auto">{{Auth::user->name}}</p>
+         <p class="ml-auto">{{Auth::user()->name}}</p>
        </div>
        <div class="email flex py-5 ">
          <p>Email</p>
-         <p class="ml-auto">{{Auth::user->email}}</p>
+         <p class="ml-auto">{{Auth::user()->email}}</p>
        </div>
        <div class="no-anggota flex py-5">
          <p>No Anggota</p>
@@ -86,12 +86,12 @@
        </div>
        <div class="no-handphone flex py-5">
          <p>No Handphone</p>
-         <p class="ml-auto">{{Auth::user->telephone}}</p>
+         <p class="ml-auto">{{Auth::user()->telephone}}</p>
        </div>
      </div>
    </div>
 
-<form method="POST" action="/rent" class="flex justify-end  ml-auto">
+<form method="POST" action="/rent">
 @csrf
   <div class="content bg-yellow-200 my-10 mx-10 rounded-lg py-5 ">
     <div class="container  flex px-10 ">
@@ -101,9 +101,10 @@
       <div class="Penerbit   w-2/12 py-2 flex justify-center">Penerbit</div>
       <div class="Kategories   w-2/12 py-2 flex justify-center" >Kategories</div>
     </div>
-
+  </div>
     @forEach ($rents as $rent)
-    {{ Form::hidden('books[]', $rent->books['isbn']) }}
+    <input type="hidden" name="book[]" value="{{$rent->books['isbn']}}">
+
     <div class="content ">
       <div class="container  flex px-10  ">
         <div class="nama-product  w-4/12 py-5  flex">
@@ -112,10 +113,10 @@
           </div>
           <div class="name-title  flex items-center font-semibold">{{$rent->books['title']}}</div>
         </div>
-        <div class="ISBN   w-2/12 py-5 flex items-center justify-center">$rent->books['isbn']</div>
-        <div class="Penulis   w-2/12 py-5 flex items-center justify-center">$rent->books['author']</div>
-        <div class="Penerbit  w-2/12 py-5 flex items-center justify-center">$rent->books['publisher']</div>
-        <div class="Kategories  w-2/12 py-5 flex justify-center items-center" >$rent->books->category['name']</div>
+        <div class="ISBN   w-2/12 py-5 flex items-center justify-center">{{$rent->books['isbn']}}</div>
+        <div class="Penulis   w-2/12 py-5 flex items-center justify-center">{{$rent->books['author']}}</div>
+        <div class="Penerbit  w-2/12 py-5 flex items-center justify-center">{{$rent->books['publisher']}}</div>
+        <div class="Kategories  w-2/12 py-5 flex justify-center items-center" >{{$rent->books->category['name']}}</div>
       </div>
     </div>
     @endforeach

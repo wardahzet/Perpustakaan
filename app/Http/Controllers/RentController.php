@@ -33,11 +33,12 @@ class RentController extends Controller
 
     public function create(Request $request)
     {
-        $datas = $request->all();
+        $datas = $request->book;
+        $i = 0;
         foreach ($datas as $data){
             Rent::create([
                         'user_email' => Auth::user()->email,
-                        'book_isbn' => $data['book_isbn'],
+                        'book_isbn' => $data,
                         'rent_date' => Carbon::now(),
                         'status' => true,
                     ]);
@@ -57,8 +58,9 @@ class RentController extends Controller
 
     public function validation(Request $request) {
         $data = $request->all();
+        $isbn = $data['books'];
         $rents = Wishlist::where('user_email', Auth::user()->email)
-                ->where('book_isbn', $data);
-        return view('review-peminjaman')->with('rent', $rents);
+                ->where('book_isbn', $isbn[0])->get();
+        return view('review-peminjaman')->with('rents', $rents);
     }
 }

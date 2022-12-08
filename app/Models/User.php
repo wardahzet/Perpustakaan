@@ -61,4 +61,14 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function wishlist()
+    {
+        return $this->hasMany(Wishlist::class,'book_isbn');
+    }
+
+    public function rent()
+    {
+        return $this->hasMany(Rent::class,'book_isbn');
+    }
 }

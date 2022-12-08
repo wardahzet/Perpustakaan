@@ -24,14 +24,21 @@ class Book extends Model
         'data',
         'cover',
         'synopsis',
-        'readers',
-        'viewers',
-        'created_at',
-        'updated_at',
     ];
+
+    protected $attributes = [
+        'readers' => 0,
+        'views' => 0,
+    ];
+
     public function wishlist()
     {
         return $this->hasMany(Wishlist::class,'book_isbn');
+    }
+
+    public function rent()
+    {
+        return $this->hasMany(Rent::class,'book_isbn');
     }
 
     public function category()

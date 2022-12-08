@@ -19,10 +19,10 @@
             <a href="/dashboard" class="text-black font-medium uppercase text-sm hover:text-blue-500 ">Dashboard</a>
           </div>
           <div class="button-2 py-5">
-            <a href="#" class="text-black font-medium uppercase text-sm  hover:text-blue-500">input data</a>
+            <a href="#" class="text-black font-medium uppercase text-sm  hover:text-blue-500">Input data</a>
           </div>
           <div class="button-3 py-5">
-            <a href="/book/all" class="text-black font-medium uppercase text-sm hover:text-blue-500">data books</a>
+            <a href="/book/all" class="text-black font-medium uppercase text-sm hover:text-blue-500">Books data</a>
           </div>
           
         </div>
@@ -69,7 +69,7 @@
         
       </div>
       <div class="content-isi mx-10">
-        <div class="title-content font-medium text-2xl py-3">Input Book Data</div>
+        <div class="title-content font-medium text-2xl py-3">Edit Book Data</div>
         <div class="route flex">
             <a href="#" class="font-base text-sm hover:text-blue-500 px-1 text-gray-400">Admin </a>
             <p class="font-base text-sm text-gray-400"> / </p>
@@ -77,43 +77,47 @@
             <a href="#" class="font-base text-sm hover:text-blue-500 px-1 text-gray-400"> Input Books Data</a>
         </div>
 
-        <form method="post" action="/book/store">
+        <form method="post" action="/book/update">
           @csrf
         <div class="title-books py-5 font-semibold text-xl">Title Books *</div>
         <div class="form-control ">
-          <input type="text" name="title" placeholder="Ex: konspirasi alam semesta" class="py-2 px-5 w-full border-2 border-solid border-gray-200 ">
+          <input type="text" name="title" class="py-2 px-5 w-full border-2 border-solid border-gray-200" value="{{$books->title}}">
         </div>
         <div class="title-books py-5 font-semibold text-xl">ISBN</div>
         <div class="form-control ">
-          <input type="text" name="isbn" placeholder="Ex: konspirasi alam semesta" class="py-2 px-5 w-full border-2 border-solid border-gray-200 ">
+          <input type="text" name="isbn" placeholder="Ex: konspirasi alam semesta" class="py-2 px-5 w-full border-2 border-solid border-gray-200 " value="{{$books->isbn}}">
         </div>
         <label for="default" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Default select</label>
         <div class="title-books py-5 font-semibold text-xl">Kategori</div>
         <select id="default" name="category_id" class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-          <option selected>-- Kategori --</option>
+          <option>-- Kategori --</option>
           @foreach($categories as $category)
           <option value="{{$category->id}}">{{$category->name}}</option>
           @endforeach
         </select>
-      
+
+        <script>
+            document.getElementByValue('{{$category->id}}').selected = true;
+        </script>
+
         @vite('resources/js/app.js')
         <div class="title-books py-5 font-semibold text-xl">Pengarang</div>
         <div class="form-control ">
-          <input type="text" name="author" placeholder="Ex: konspirasi alam semesta" class="py-2 px-5 w-full border-2 border-solid border-gray-200 ">
+          <input type="text" name="author" value="{{$books->author}} class="py-2 px-5 w-full border-2 border-solid border-gray-200 ">
         </div>
         <div class="title-books py-5 font-semibold text-xl">Penerbit</div>
         <div class="form-control ">
-          <input type="text" name="publisher" placeholder="Ex: konspirasi alam semesta" class="py-2 px-5 w-full border-2 border-solid border-gray-200 ">
+          <input type="text" name="publisher" value="{{$books->publisher}} class="py-2 px-5 w-full border-2 border-solid border-gray-200 ">
         </div>
         <div class="title-books py-5 font-semibold text-xl">Tahun Terbit</div>
         <div class="form-control ">
-          <input type="number" name="year" placeholder="Ex: konspirasi alam semesta" class="py-2 px-5 w-full border-2 border-solid border-gray-200" value="2000">
+          <input type="number" name="year" value="{{$books->year}} class="py-2 px-5 w-full border-2 border-solid border-gray-200" value="2000">
         </div>
 
 
         <div class="title-input py-5 font-semibold text-xl">Sinopsis</div>
          <div class="form-control ">
-          <input type="text" name="synopsis" placeholder="Ex: konspirasi alam semesta" class="py-2 px-5 w-full h-32 border-2 border-solid border-gray-200 ">
+          <input type="text" name="synopsis" value="{{$books->synopsis}} class="py-2 px-5 w-full h-32 border-2 border-solid border-gray-200 ">
         </div>
         <div class="title-input py-5 font-semibold text-xl">Cover</div>
         <div class="form-control">

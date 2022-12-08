@@ -16,13 +16,13 @@
         </div>
         <div class="side-button border-solid border-r-2 border-gray-200 h-screen px-8">
         <div class="button-1 py-5">
-            <a href="#" class="text-black font-medium uppercase text-sm hover:text-blue-500 ">Dashboard</a>
+            <a href="/dashboard" class="text-black font-medium uppercase text-sm hover:text-blue-500 ">Dashboard</a>
           </div>
           <div class="button-2 py-5">
-            <a href="#" class="text-black font-medium uppercase text-sm  hover:text-blue-500">input data</a>
+            <a href="/book/create" class="text-black font-medium uppercase text-sm  hover:text-blue-500">input data</a>
           </div>
           <div class="button-3 py-5">
-            <a href="#" class="text-black font-medium uppercase text-sm hover:text-blue-500">data books</a>
+            <a href="/book/all" class="text-black font-medium uppercase text-sm hover:text-blue-500">data books</a>
           </div>
         </div>
      </div>
@@ -46,8 +46,8 @@
 <!-- Dropdown menu -->
 <div id="dropdownInformation" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
     <div class="py-3 px-4 text-sm text-gray-900 dark:text-white">
-      <div>Alifia Putri Budiyanti</div>
-      <div class="font-medium truncate">aisyah@brawijaya.com</div>
+      <div>{{Auth::user()->name}}</div>
+      <div class="font-medium truncate">{{Auth::user()->email}}</div>
     </div>
     <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
       <li>
@@ -76,7 +76,9 @@
             <a href="#" class="font-base text-sm hover:text-blue-500 px-1 text-gray-400"> Books Data</a>
         </div>
         <div class="add-book my-5">
+          <a href="/book/create">
           <button class="bg-[#EA9901] py-2 px-5 rounded-md  font-medium text-black focus:text-white">+ Add Books</button>
+          </a>
         </div>
       </div>
       <div class="list"><table class=" mx-10 w-11/12" >

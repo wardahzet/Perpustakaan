@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Book;
+use App\Models\Category;
 use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,23 +21,17 @@ class BookController extends Controller
                 ->with('status', $status);
     }
 
+    public function showEdit($isbn)
+    {
+        $book = Book::find($isbn);
+        return view('editBook')
+                        ->with('book', $book);
+    }
+
     public function store(Request $request)
     {
-        $data = $request->all();
-        $book = Book::create([
-                    'isbn' => $data['isbn'],
-                    'title' => $data['title'],
-                    'author' => $data['author'],
-                    'publisher' => $data['publisher'],
-                    'year' => $data['year'],
-                    'cover' => $data['cover'],
-                    'header' => $data['header'],
-                    'readers' => 0,
-                    'views' => 0,
-                    'created_at' => Carbon::now(),
-                ]);
-        return view('book.index')
-                ->with('book', $book);
+        Book::create($request->all());
+        return redirect('/book/all');
     }
 
     public function update(Request $request)
@@ -51,8 +46,6 @@ class BookController extends Controller
             'year' => $data['year'],
             'cover' => $data['cover'],
             'header' => $data['header'],
-            'readers' => 0,
-            'views' => 0
         ]);
         return view('book.index')
                 ->with('book', $book);
@@ -71,5 +64,10 @@ class BookController extends Controller
         Book::all();
         return view('booksData-admin')
                 ->with('book', Book::all());
+    }
+
+    public function showCreate() {
+        $categories = Category::all();
+        return view('inputBooks')->with('categories', $categories);
     }
 }

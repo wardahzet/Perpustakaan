@@ -57,14 +57,12 @@ Route::middleware([
 ])->group(function (){
     Route::get('/dashboard', [HomeController::class, 'dashboard']);
     Route::get('/logout', [LogoutController::class, 'logout'])->name('loogout');
-    Route::get('/book/store', [BookStoreController::class, 'store']);
-    Route::get('/book/create',function () {
-        return view('inputBooks');
-    });
+    Route::post('/book/store', [BookController::class, 'store']);
+    Route::get('/book/data/{book}', [BookController::class, 'data'])->name('bookData');
+    Route::get('/book/create', [BookController::class, 'showCreate']);
     Route::get('/book-detail/{isbn}', [BookController::class,'show']);
-    Route::post('/book/edit', [BookController::class, 'update']);
-    Route::get('/book/update/{isbn}', [BookController::class,'show-update']);
-    Route::post('/book/edit', [BookController::class, 'update']);
+    Route::get('/book/edit/{isbn}', [BookController::class,'showEdit']);
+    Route::post('/book/update', [BookController::class, 'update']);
     Route::get('/book/delete/{isbn}', [BookController::class, 'delete']);
     Route::get('/book/all', [BookController::class, 'showAll']);
 });

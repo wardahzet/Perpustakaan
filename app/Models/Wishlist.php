@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Wishlist extends Model
 {
     use HasFactory;
-    public $timestamp = false;
+    public $timestamps = false;
+
+    protected $fillable = [
+        'user_email',
+        'book_isbn',
+    ];
 
     public function books()
     {

@@ -109,7 +109,7 @@
       <div class="container  flex px-10  ">
         <div class="nama-product  w-4/12 py-5  flex">
           <div class="image  mr-5">
-            <img src="https://i.ibb.co/M7r1MVM/Rectangle-115.png" alt="">
+            <img src="{{$rent->books['cover']}}" alt="">
           </div>
           <div class="name-title  flex items-center font-semibold">{{$rent->books['title']}}</div>
         </div>

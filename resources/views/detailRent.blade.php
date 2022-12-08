@@ -40,10 +40,10 @@
             </div>
             </div>
             <nav class="hidden space-x-10 md:flex">
-                <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Home</a>
-                <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Rent</a>
-                <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Wishlist</a>
-                <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Profile</a>
+                <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">Home</a>
+                <a href="{{ route('rents')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Rent</a>
+                <a href="{{ route('wishlist')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Wishlist</a>
+                <a href="{{ route('profile')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Profile</a>
             </nav>
             <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
               <a href="#" class="mr-8 inline-flex items-center rounded-md border border-[#EA9901] bg-white px-4 py-2 text-base font-medium text-[#EA9901] shadow-sm hover:bg-gray-300">Logout</a>
@@ -57,7 +57,6 @@
       <div class="container bg-[rgb(255,250,239)] flex px-10 rounded-lg py-5">
       <div class="checkboks w-1/12 py-2 flex justify-center">
 
-          <label for=""></label>
           <input type="checkbox" id="" value="" onclick="checkAll(this)"> 
 
       </div>
@@ -88,7 +87,7 @@
             <div class="Penerbit  w-2/12 py-5 flex items-center justify-center">{{$wishlist->books['publisher']}}</div>
             <div class="Kategories  w-1/12 py-5 flex justify-center items-center" >{{$wishlist->books->category['name']}}</div>
             <div class="button w-1/12 py-20 justify-center items-center">
-              <button type="button" class="delete bg-[rgb(234,153,1)]-500 px-6 py-2 rounded-xl  bg-[#EA9901] focus:border-solid focus:bg-white focus:border-[#EA9901] focus:border-2" >Delete</button>
+              <a href="/wishlist/delete/{{$wishlist->books['isbn']}}"><button type="button" class="delete bg-[rgb(234,153,1)]-500 px-6 py-2 rounded-xl  bg-[#EA9901] focus:border-solid focus:bg-white focus:border-[#EA9901] focus:border-2" >Delete</button></a>
             </div>
           </div>
         @endforeach

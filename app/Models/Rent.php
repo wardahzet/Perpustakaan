@@ -8,9 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Rent extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 
-    protected $email = ['user_email'];
-    protected $fillable = ['user_email'];
+    protected $fillable = [
+        'user_email',
+        'book_isbn',
+        'rent_date',
+        'due_date',
+        'status'
+    ];
     
     public function books()
     {

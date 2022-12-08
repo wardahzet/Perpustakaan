@@ -24,7 +24,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('dashboard');
 Route::get('/src/{keyword}', [SearchController::class, 'keyword']);
 Route::get('/search/Category/{keyword}', [SearchController::class, 'category']);
 Route::get('/search/{keyword}', [SearchController::class, 'type']);
-Route::get('/description/{id}', [BookController::class, 'index']);
+Route::get('/description/{isbn}', [BookController::class, 'index']);
 
 Route::get('/test', function () {
     return view('profile');
@@ -45,6 +45,8 @@ Route::middleware([
     Route::get('/logout', [LogoutController::class, 'logout'])->name('loogout');
     Route::post('/rent/validation', [RentController::class, 'validation']);
     Route::post('/rent', [RentController::class, 'create']);
+    Route::get('/wishlist/delete/{isbn}', [WishlistController::class, 'destroy']);
+    Route::get('/wishlist/store/{isbn}', [WishlistController::class, 'store']);
 });
 
 
@@ -55,6 +57,16 @@ Route::middleware([
 ])->group(function (){
     Route::get('/dashboard', [HomeController::class, 'dashboard']);
     Route::get('/logout', [LogoutController::class, 'logout'])->name('loogout');
+    Route::get('/book/store', [BookStoreController::class, 'store']);
+    Route::get('/book/create',function () {
+        return view('inputBooks');
+    });
+    Route::get('/book-detail/{isbn}', [BookController::class,'show']);
+    Route::post('/book/edit', [BookController::class, 'update']);
+    Route::get('/book/update/{isbn}', [BookController::class,'show-update']);
+    Route::post('/book/edit', [BookController::class, 'update']);
+    Route::get('/book/delete/{isbn}', [BookController::class, 'delete']);
+    Route::get('/book/all', [BookController::class, 'showAll']);
 });
 
 Route::get('/detailRent', function () {

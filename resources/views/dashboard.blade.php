@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -18,13 +17,13 @@
         </div>
         <div class="side-button border-solid border-r-2 border-gray-200 h-screen px-8">
           <div class="button-1 py-5">
-            <a href="#" class="text-black font-medium uppercase text-sm hover:text-blue-500 ">Dashboard</a>
+            <a href="/dashboard" class="text-black font-medium uppercase text-sm hover:text-blue-500 ">Dashboard</a>
           </div>
           <div class="button-2 py-5">
-            <a href="#" class="text-black font-medium uppercase text-sm  hover:text-blue-500">input data</a>
+            <a href="/book/create" class="text-black font-medium uppercase text-sm  hover:text-blue-500">input data</a>
           </div>
           <div class="button-3 py-5">
-            <a href="#" class="text-black font-medium uppercase text-sm hover:text-blue-500">data books</a>
+            <a href="/book/all" class="text-black font-medium uppercase text-sm hover:text-blue-500">data books</a>
           </div>
           
         </div>

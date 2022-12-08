@@ -19,25 +19,21 @@ class WishlistController extends Controller
                 ->with('count',$count);
     }
     
-    public function store(Request $request)
+    public function store($isbn)
     {
-        $data = $request->all();
-        Wishlist::create ([
-            'user_email' => Auth::user()->email,
-            'book_isbn' => $data['book_isbn']
-        ]);
+        $book = Wishlist::where('user_email',Auth::user()->email)->where('book_isbn',$isbn)->first();
+        if(!$book){
+            Wishlist::create ([
+                'user_email' => Auth::user()->email,
+                'book_isbn' => $isbn
+            ]);
+        }
+        return back();
     }
 
-    public function destroy(Request $request)
+    public function destroy($isbn)
     {
-        $data = $request->all();
-        Wishlist::where('user_email', Auth::user()->email)
-                ->where('book_isbn', $data['book_isbn'])->delete();
-
-        $count = Rent::count();
-        $wishes = Wishlist::all();
-        return view('detailRent')
-                ->with('wishes', $wishes)
-                ->with('count', $count);
+        Wishlist::where('user_email',Auth::user()->email)->where('book_isbn',$isbn)->delete();
+        return back();
     }
 }

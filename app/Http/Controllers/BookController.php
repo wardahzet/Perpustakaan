@@ -4,16 +4,20 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Book;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
-    public function index(Request $request)
+    public function index($isbn)
     {
-        $data = $request->all();
-        $book = Book::where('isbn', $data)->get();;
+        $book = Book::find($isbn);
+        $status = Wishlist::where('user_email',Auth::user()->email)
+                            ->where('book_isbn',$isbn)->first();
         return view('bookDetails')
-                ->with('book', $book);
+                ->with('book', $book)
+                ->with('status', $status);
     }
 
     public function store(Request $request)
@@ -61,5 +65,11 @@ class BookController extends Controller
         $book->delete();
         return view('book.index')
                 ->with('book', $book);
+    }
+
+    public function showAll() {
+        Book::all();
+        return view('booksData-admin')
+                ->with('book', Book::all());
     }
 }

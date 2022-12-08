@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Book extends Model
 {
@@ -13,6 +14,21 @@ class Book extends Model
     protected $keyType = 'string';
     public $incrementing = false;
 
+    protected $fillable = [
+        'isbn',
+        'category_id',
+        'title',
+        'author',
+        'publisher',
+        'year',
+        'data',
+        'cover',
+        'synopsis',
+        'readers',
+        'viewers',
+        'created_at',
+        'updated_at',
+    ];
     public function wishlist()
     {
         return $this->hasMany(Wishlist::class,'book_isbn');

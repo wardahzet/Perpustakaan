@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('author');
             $table->string('publisher');
             $table->year('year');
-            $table->string('data');
-            $table->string('cover');
+            $table->string('data')->nullable();
+            $table->string('cover')->nullable();
             $table->text('synopsis');
             $table->integer('readers');
             $table->integer('views');

@@ -45,25 +45,29 @@
 
 <!-- Dropdown menu -->
 <div id="dropdownInformation" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-    <div class="py-3 px-4 text-sm text-gray-900 dark:text-white">
-      <div>{{Auth::user()->name}}</div>
-      <div class="font-medium truncate">{{Auth::user()->email}}</div>
-    </div>
-    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
-      <li>
-        <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
-      </li>
-      <li>
-        <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-      </li>
-    
-    </ul>
-    <div class="py-1">
-      <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-    </div>
+  <div class="py-3 px-4 text-sm text-gray-900 dark:text-white">
+    <div>{{Auth::user()->name}}</div>
+    <div class="font-medium truncate">{{Auth::user()->email}}</div>
+  </div>
+  <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+    <li>
+      <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
+    </li>
+    <li>
+      <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+    </li>
+  
+  </ul>
+  <div class="py-1">
+   <form method="post" action="{{route('logout')}}">
+     @csrf
+     
+    <button type="submit" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</button>
+   </form>
+   </div>
 </div>
 @vite('resources/js/app.js')
-        </div>
+      </div>
     
         
       </div>
@@ -87,42 +91,16 @@
     <th class="w-5/12 ">Action</th>
     
   </tr>
-  <tr >
-    <td class="py-5 ">konspirasi alam semesta</td>
+  @foreach ($books as $book)
+  <tr class="justify-center">
+    <td class="py-5 ">{{$book['title']}}</td>
     <td class= "py-5">
-      <button class="bg-gray-300 px-5 py-1 rounded-md ">view</button>
-      <button class="bg-gray-300 px-5 py-1 rounded-md ">edit</button>
-      <button class="bg-red-400 px-5 py-1 rounded-md ">Hapus</button>
+      <a href="/book/edit/{{$book['isbn']}}"><button class="bg-gray-300 px-5 py-1 rounded-md ">edit</button></a>
+      <a href="/book/delete/{{$book['isbn']}}"><button class="bg-red-400 px-5 py-1 rounded-md ">Hapus</button></a>
     </td>
    
   </tr>
-  <tr>
-    <td class="py-5 ">konspirasi alam semesta</td>
-    <td class= "py-5">
-      <button class="bg-gray-300 px-5 py-1 rounded-md ">view</button>
-      <button class="bg-gray-300 px-5 py-1 rounded-md ">edit</button>
-      <button class="bg-red-400 px-5 py-1 rounded-md ">Hapus</button>
-    </td>
- 
-  </tr>
-   <tr>
-    <td class="py-5 ">konspirasi alam semesta</td>
-    <td class= "py-5">
-      <button class="bg-gray-300 px-5 py-1 rounded-md ">view</button>
-      <button class="bg-gray-300 px-5 py-1 rounded-md ">edit</button>
-      <button class="bg-red-400 px-5 py-1 rounded-md ">Hapus</button>
-    </td>
- 
-  </tr>
-   <tr>
-    <td class="py-5 ">konspirasi alam semesta</td>
-    <td class= "py-5">
-      <button class="bg-gray-300 px-5 py-1 rounded-md ">view</button>
-      <button class="bg-gray-300 px-5 py-1 rounded-md ">edit</button>
-      <button class="bg-red-400 px-5 py-1 rounded-md ">Hapus</button>
-    </td>
- 
-  </tr>
+  @endforeach
 </table></div>
       
 

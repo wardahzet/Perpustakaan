@@ -19,7 +19,7 @@
             <a href="/dashboard" class="text-black font-medium uppercase text-sm hover:text-blue-500 ">Dashboard</a>
           </div>
           <div class="button-2 py-5">
-            <a href="#" class="text-black font-medium uppercase text-sm  hover:text-blue-500">Input data</a>
+            <a href="/book/create" class="text-black font-medium uppercase text-sm  hover:text-blue-500">Input data</a>
           </div>
           <div class="button-3 py-5">
             <a href="/book/all" class="text-black font-medium uppercase text-sm hover:text-blue-500">Books data</a>
@@ -46,46 +46,50 @@
 
 <!-- Dropdown menu -->
 <div id="dropdownInformation" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-    <div class="py-3 px-4 text-sm text-gray-900 dark:text-white">
-      <div>{{Auth::user()->name}}</div>
-      <div class="font-medium truncate">{{Auth::user()->email}}</div>
-    </div>
-    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
-      <li>
-        <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
-      </li>
-      <li>
-        <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-      </li>
-    
-    </ul>
-    <div class="py-1">
-      <a href="/" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-    </div>
+  <div class="py-3 px-4 text-sm text-gray-900 dark:text-white">
+    <div>{{Auth::user()->name}}</div>
+    <div class="font-medium truncate">{{Auth::user()->email}}</div>
+  </div>
+  <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+    <li>
+      <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
+    </li>
+    <li>
+      <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+    </li>
+  
+  </ul>
+  <div class="py-1">
+   <form method="post" action="{{route('logout')}}">
+     @csrf
+     
+    <button type="submit" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</button>
+   </form>
+   </div>
 </div>
 @vite('resources/js/app.js')
-        </div>
+      </div>
     
         
       </div>
       <div class="content-isi mx-10">
         <div class="title-content font-medium text-2xl py-3">Edit Book Data</div>
         <div class="route flex">
-            <a href="#" class="font-base text-sm hover:text-blue-500 px-1 text-gray-400">Admin </a>
+            <a href="\dashboard" class="font-base text-sm hover:text-blue-500 px-1 text-gray-400">Admin </a>
             <p class="font-base text-sm text-gray-400"> / </p>
         
-            <a href="#" class="font-base text-sm hover:text-blue-500 px-1 text-gray-400"> Input Books Data</a>
+            <a href="\book\create" class="font-base text-sm hover:text-blue-500 px-1 text-gray-400"> Input Books Data</a>
         </div>
 
         <form method="post" action="/book/update">
           @csrf
         <div class="title-books py-5 font-semibold text-xl">Title Books *</div>
         <div class="form-control ">
-          <input type="text" name="title" class="py-2 px-5 w-full border-2 border-solid border-gray-200" value="{{$books->title}}">
+          <input type="text" name="title" class="py-2 px-5 w-full border-2 border-solid border-gray-200" value="{{$book->title}}">
         </div>
         <div class="title-books py-5 font-semibold text-xl">ISBN</div>
         <div class="form-control ">
-          <input type="text" name="isbn" placeholder="Ex: konspirasi alam semesta" class="py-2 px-5 w-full border-2 border-solid border-gray-200 " value="{{$books->isbn}}">
+          <input type="text" name="isbn" placeholder="Ex: konspirasi alam semesta" class="py-2 px-5 w-full border-2 border-solid border-gray-200 " value="{{$book->isbn}}">
         </div>
         <label for="default" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Default select</label>
         <div class="title-books py-5 font-semibold text-xl">Kategori</div>
@@ -103,34 +107,34 @@
         @vite('resources/js/app.js')
         <div class="title-books py-5 font-semibold text-xl">Pengarang</div>
         <div class="form-control ">
-          <input type="text" name="author" value="{{$books->author}} class="py-2 px-5 w-full border-2 border-solid border-gray-200 ">
+          <input type="text" name="author" value="{{$book->author}}" class="py-2 px-5 w-full border-2 border-solid border-gray-200 ">
         </div>
         <div class="title-books py-5 font-semibold text-xl">Penerbit</div>
         <div class="form-control ">
-          <input type="text" name="publisher" value="{{$books->publisher}} class="py-2 px-5 w-full border-2 border-solid border-gray-200 ">
+          <input type="text" name="publisher" value="{{$book->publisher}}" class="py-2 px-5 w-full border-2 border-solid border-gray-200 ">
         </div>
         <div class="title-books py-5 font-semibold text-xl">Tahun Terbit</div>
         <div class="form-control ">
-          <input type="number" name="year" value="{{$books->year}} class="py-2 px-5 w-full border-2 border-solid border-gray-200" value="2000">
+          <input type="number" name="year" value="{{$book->year}}" class="py-2 px-5 w-full border-2 border-solid border-gray-200" value="2000">
         </div>
 
 
         <div class="title-input py-5 font-semibold text-xl">Sinopsis</div>
          <div class="form-control ">
-          <input type="text" name="synopsis" value="{{$books->synopsis}} class="py-2 px-5 w-full h-32 border-2 border-solid border-gray-200 ">
+          <input type="text" name="synopsis" value="{{$book->synopsis}}" class="py-2 px-5 w-full h-32 border-2 border-solid border-gray-200 ">
         </div>
         <div class="title-input py-5 font-semibold text-xl">Cover</div>
         <div class="form-control">
-          <input name="cover" type="file" >
+          <input name="cover" type="file" value="{{$book->cover}}">
         </div>
         <div class="title-input py-5 font-semibold text-xl">File Data</div>
         <div class="form-control">
-          <input name="data" type="file" >
+          <input name="data" type="file" value="{{$book->data}}">
         </div>
         <div class="button py-5 flex">
           <div class="button-1 mx-2">
             <button type="submit" class="bg-[#EA9901] px-5 py-2 rounded-md font-base text-white focus:bg-[#EA9901] border-none">
-              Publish Books
+              Update Book
             </button>
           </div>
         </div>

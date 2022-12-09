@@ -21,7 +21,7 @@
       <div class="mx-auto">
         <div class="flex items-center mr-0 ml-0 justify-between border-b-2 border-gray-300 py-6 md:justify-start md:space-x-10">
             <div class="mb-1 ml-8 flex justify-start lg:w-0 lg:flex-1">
-                <a href="#">
+                <a href="/">
                 <span class="sr-only">E-Library</span>
                 <img class="h-8 w-auto sm:h-10" src="https://i.ibb.co/XYThtt1/Logo-ELibrary.png" alt="">
                 </a>
@@ -29,9 +29,11 @@
         <div class="flex justify-end">
             
         <div class="container flex items-center ">
-          <input type="text" class="block -ml-16 mx-10 w-96 h-10 px-4 py-2 text-bas bg-clip-padding border rounded transition ease-in-out focus:text-gray-700 focus:bg-gray-100 focus:border-[#EA9901] focus:outline-none   input-search bg-white-200 border-solid border-2 border-gray-300 rounded-2xl  text-gray-700" placeholder="Search" >
-          <button type="submit" class="bg-[#EA9901] px-5 py-2 rounded-lg">Search</button>
-          
+          <form method="get" action="/src">
+            @csrf
+            <input type="text" name="keyword" class="block -ml-16 mx-10 w-96 h-10 px-4 py-2 text-bas bg-clip-padding border-rounded transition ease-in-out focus:text-gray-700 focus:bg-gray-100 focus:border-[#EA9901] focus:outline-none   input-search bg-white-200 border-solid border-2 border-gray-300 rounded-2xl  text-gray-700" placeholder="Search" >
+            <button type="submit" class="bg-[#EA9901] px-5 py-2 rounded-lg">Search</button>
+          </form>
         </div>
         </div>
         <nav class="hidden space-x-10 md:flex">
@@ -41,7 +43,7 @@
             <a href="{{ route('profile')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Profile</a>
         </nav>
         <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-          <form method="POST" action="{{ route('loogout') }}">
+          <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button type='submit' class="mr-8 inline-flex items-center rounded-md border border-[#EA9901] bg-white px-4 py-2 text-base font-medium text-[#EA9901] shadow-sm hover:bg-gray-300">Logout</button>
           </form>
@@ -61,8 +63,11 @@
         <div class="flex justify-end">
             
         <div class="container flex items-center">
-          <input type="text" class="block -ml-80 mx-10 w-96 h-10 px-4 py-2 text-base bg-gray-100 bg-clip-padding border rounded transition ease-in-out focus:text-gray-700 focus:bg-gray-100 focus:border-[#EA9901] focus:outline-none   input-search bg-white-200 border-solid border-2 border-gray-300 rounded-2xl  text-gray-700" placeholder="Search" >
-          <button type="submit" class="bg-[#EA9901] px-5 py-2 rounded-lg">Search</button>
+          <form method="get" action="/src">
+            @csrf
+            <input name="keyword" type="text" class="block -ml-80 mx-10 w-96 h-10 px-4 py-2 text-base bg-gray-100 bg-clip-padding border rounded transition ease-in-out focus:text-gray-700 focus:bg-gray-100 focus:border-[#EA9901] focus:outline-none   input-search bg-white-200 border-solid border-2 border-gray-300 rounded-2xl  text-gray-700" placeholder="Search" >
+            <button type="submit" class="bg-[#EA9901] px-5 py-2 rounded-lg">Search</button>
+          </form>
         </div>
         </div>
         <nav class="hidden space-x-10 md:flex">

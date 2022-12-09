@@ -24,8 +24,10 @@ class BookController extends Controller
     public function showEdit($isbn)
     {
         $book = Book::find($isbn);
+        $categories = Category::all();
         return view('editBook')
-                        ->with('book', $book);
+                        ->with('book', $book)
+                        ->with('categories', $categories);
     }
 
     public function store(Request $request)
@@ -47,8 +49,7 @@ class BookController extends Controller
             'cover' => $data['cover'],
             'header' => $data['header'],
         ]);
-        return view('book.index')
-                ->with('book', $book);
+        return redirect('/book/all');;
     }
 
     public function destroy(Request $request)
@@ -61,9 +62,9 @@ class BookController extends Controller
     }
 
     public function showAll() {
-        Book::all();
+        $books = Book::all();
         return view('booksData-admin')
-                ->with('book', Book::all());
+                ->with('books', $books);
     }
 
     public function showCreate() {

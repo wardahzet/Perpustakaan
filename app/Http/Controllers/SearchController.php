@@ -15,9 +15,15 @@ class SearchController extends Controller
         $this->books = Book::all();
     }
 
-    public function keywords($keywords)
+    public function keywords(Request $request)
     {
-        $this->books = $this->books->where('title', 'LIKE', '%'.$keywords.'%');
+        $keyword = $request->all();
+        
+        if ($keyword) {
+            $this->books = $this->books->filter(function ($book) use ($keyword) {
+                return in_array($book->title, $keyword);
+            });
+        }
 
         return view('searchResult')->with('books', $this->books);
     }

@@ -21,7 +21,7 @@ use App\Http\Controllers\WishlistController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('dashboard');
-Route::get('/src/{keyword}', [SearchController::class, 'keyword']);
+Route::get('/src/', [SearchController::class, 'keywords']);
 Route::get('/search/Category/{keyword}', [SearchController::class, 'category']);
 Route::get('/search/{keyword}', [SearchController::class, 'type']);
 Route::get('/description/{isbn}', [BookController::class, 'index']);

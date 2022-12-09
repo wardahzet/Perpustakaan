@@ -101,7 +101,6 @@
       <div class="Penerbit   w-2/12 py-2 flex justify-center">Penerbit</div>
       <div class="Kategories   w-2/12 py-2 flex justify-center" >Kategories</div>
     </div>
-  </div>
     @forEach ($rents as $rent)
     <input type="hidden" name="book[]" value="{{$rent->books['isbn']}}">
 
@@ -120,6 +119,8 @@
       </div>
     </div>
     @endforeach
+  </div>
+   
   </div>
 
   <div class="bg-[#D9D9D9] flex px-16 p-5">

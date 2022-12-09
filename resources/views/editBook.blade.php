@@ -121,7 +121,7 @@
 
         <div class="title-input py-5 font-semibold text-xl">Sinopsis</div>
          <div class="form-control ">
-          <input type="text" name="synopsis" value="{{$book->synopsis}}" class="py-2 px-5 w-full h-32 border-2 border-solid border-gray-200 ">
+          <textarea type="text" name="synopsis" class="py-2 px-5 w-full h-32 border-2 border-solid border-gray-200 ">{{$book->synopsis}}</textarea>
         </div>
         <div class="title-input py-5 font-semibold text-xl">Cover</div>
         <div class="form-control">

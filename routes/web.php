@@ -63,7 +63,7 @@ Route::middleware([
     Route::get('/book-detail/{isbn}', [BookController::class,'show']);
     Route::get('/book/edit/{isbn}', [BookController::class,'showEdit']);
     Route::post('/book/update', [BookController::class, 'update']);
-    Route::get('/book/delete/{isbn}', [BookController::class, 'delete']);
+    Route::get('/book/delete/{isbn}', [BookController::class, 'destroy']);
     Route::get('/book/all', [BookController::class, 'showAll']);
 });
 

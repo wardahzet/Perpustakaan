@@ -117,7 +117,7 @@
 
         <div class="title-input py-5 font-semibold text-xl">Sinopsis</div>
          <div class="form-control ">
-          <input type="text" name="synopsis" placeholder="Ex: konspirasi alam semesta" class="py-2 px-5 w-full h-32 border-2 border-solid border-gray-200 ">
+          <textarea type="text" name="synopsis" placeholder="Ex: konspirasi alam semesta"  class="py-2 px-5 w-full h-32 border-2 border-solid border-gray-200 "></textarea>
         </div>
         <div class="title-input py-5 font-semibold text-xl">Cover</div>
         <div class="form-control">

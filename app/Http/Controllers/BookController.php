@@ -47,18 +47,16 @@ class BookController extends Controller
             'publisher' => $data['publisher'],
             'year' => $data['year'],
             'cover' => $data['cover'],
-            'header' => $data['header'],
+            'synopsis' => $data['synopsis'],
         ]);
         return redirect('/book/all');;
     }
 
-    public function destroy(Request $request)
+    public function destroy($isbn)
     {
-        $data = $request->all();
-        $book = Book::find($data['isbn']);
+        $book = Book::find($isbn);
         $book->delete();
-        return view('book.index')
-                ->with('book', $book);
+        return redirect()->back();
     }
 
     public function showAll() {

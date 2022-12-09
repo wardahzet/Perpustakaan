@@ -3,7 +3,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Home</title>
   @vite('resources/css/app.css')
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -16,7 +16,7 @@
 
 @if (Route::has('login'))
 <div class="relative bg-white">
-    @auth
+  @auth
     <div class="relative bg-white">
       <div class="mx-auto">
         <div class="flex items-center mr-0 ml-0 justify-between border-b-2 border-gray-300 py-6 md:justify-start md:space-x-10">
@@ -30,19 +30,21 @@
             
         <div class="container flex items-center ">
           <form method="get" action="/src">
-            @csrf
-            <input type="text" name="keyword" class="block -ml-16 mx-10 w-96 h-10 px-4 py-2 text-bas bg-clip-padding border-rounded transition ease-in-out focus:text-gray-700 focus:bg-gray-100 focus:border-[#EA9901] focus:outline-none   input-search bg-white-200 border-solid border-2 border-gray-300 rounded-2xl  text-gray-700" placeholder="Search" >
-            <button type="submit" class="bg-[#EA9901] px-5 py-2 rounded-lg">Search</button>
+          @csrf
+            <input type="text" name="keyword" class="block mt-4 -ml-20 mx-10 w-72 h-10 px-4 py-2 text-bas bg-clip-padding border-rounded transition ease-in-out focus:text-gray-700 focus:bg-gray-100 focus:border-[#EA9901] focus:outline-none   input-search bg-white-200 border-solid border-2 border-gray-300 rounded-2xl  text-gray-700" placeholder="Search" >
           </form>
+          <button type="submit" class="bg-[#EA9901] px-5 py-2 rounded-lg">Search</button>
         </div>
         </div>
-        <nav class="hidden space-x-10 md:flex">
+        <div class="">
+        <nav class="space-x-10 md:flex">
             <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Home</a>
             <a href="{{ route('rents')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Rent</a>
             <a href="{{ route('wishlist')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Wishlist</a>
             <a href="{{ route('profile')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Profile</a>
         </nav>
-        <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
+        </div>
+        <div class="hidden items-center mt-3 justify-end md:flex md:flex-1 lg:w-0">
           <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button type='submit' class="mr-8 inline-flex items-center rounded-md border border-[#EA9901] bg-white px-4 py-2 text-base font-medium text-[#EA9901] shadow-sm hover:bg-gray-300">Logout</button>
@@ -65,9 +67,9 @@
         <div class="container flex items-center">
           <form method="get" action="/src">
             @csrf
-            <input name="keyword" type="text" class="block -ml-80 mx-10 w-96 h-10 px-4 py-2 text-base bg-gray-100 bg-clip-padding border rounded transition ease-in-out focus:text-gray-700 focus:bg-gray-100 focus:border-[#EA9901] focus:outline-none   input-search bg-white-200 border-solid border-2 border-gray-300 rounded-2xl  text-gray-700" placeholder="Search" >
-            <button type="submit" class="bg-[#EA9901] px-5 py-2 rounded-lg">Search</button>
+            <input name="keyword" type="text" class="block mt-4 -ml-80 mx-10 w-96 h-10 px-4 py-2 text-base bg-gray-100 bg-clip-padding border rounded transition ease-in-out focus:text-gray-700 focus:bg-gray-100 focus:border-[#EA9901] focus:outline-none   input-search bg-white-200 border-solid border-2 border-gray-300 rounded-2xl  text-gray-700" placeholder="Search" >
           </form>
+          <button type="submit" class="bg-[#EA9901] px-5 py-2 rounded-lg">Search</button>
         </div>
         </div>
         <nav class="hidden space-x-10 md:flex">

@@ -25,13 +25,13 @@ class SearchController extends Controller
             });
         }
 
-        return view('searchResult')->with('books', $this->books);
+        return view('member.searchResult')->with('books', $this->books);
     }
 
     public function category($keywords)
     {
         $this->books = $this->books->where('category_id',$keywords);
-        return view('searchResult')->with('books', $this->books);
+        return view('member.searchResult')->with('books', $this->books);
     }
     public function type($keywords)
     {
@@ -45,6 +45,6 @@ class SearchController extends Controller
         } 
         else if ($keywords == 'recommendations')
             $this->books = $this->books->sortBy('readers');
-        return view('searchResult')->with('books', $this->books);
+        return view('member.searchResult')->with('books', $this->books);
     }
 }

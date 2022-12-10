@@ -14,18 +14,16 @@ class BookController extends Controller
     public function index($isbn)
     {
         $book = Book::find($isbn);
-        $status = Wishlist::where('user_email',Auth::user()->email)
-                            ->where('book_isbn',$isbn)->first();
-        return view('bookDetails')
-                ->with('book', $book)
-                ->with('status', $status);
+
+        return view('member.bookDetails')
+                ->with('book', $book);
     }
 
     public function showEdit($isbn)
     {
         $book = Book::find($isbn);
         $categories = Category::all();
-        return view('editBook')
+        return view('admin.editBook')
                         ->with('book', $book)
                         ->with('categories', $categories);
     }
@@ -61,12 +59,12 @@ class BookController extends Controller
 
     public function showAll() {
         $books = Book::all();
-        return view('booksData-admin')
+        return view('admin.booksData-admin')
                 ->with('books', $books);
     }
 
     public function showCreate() {
         $categories = Category::all();
-        return view('inputBooks')->with('categories', $categories);
+        return view('admin.inputBooks')->with('categories', $categories);
     }
 }

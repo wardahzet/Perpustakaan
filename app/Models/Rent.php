@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Rent extends Model
 {
@@ -15,7 +15,10 @@ class Rent extends Model
         'book_isbn',
         'rent_date',
         'due_date',
-        'status'
+    ];
+
+    protected $attributes = [
+        'status' => true
     ];
     
     public function books()

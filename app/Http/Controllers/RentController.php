@@ -21,37 +21,35 @@ class RentController extends Controller
     {
         $rent = Rent::where('user_email',  Auth::user()->email)
         ->where('status', false)->get();
-        return view('rentHistory')->with('rent', $rent);
+        return view('member.rentHistory')->with('rent', $rent);
     }
 
     public function active()
     {
         $rent = Rent::where('user_email',  Auth::user()->email)
                 ->where('status', true)->get();
-        return view('rentCurrent')->with('rent', $rent);
+        return view('member.rentCurrent')->with('rent', $rent);
     }
 
     public function create(Request $request)
     {
         $datas = $request->book;
-        $i = 0;
         foreach ($datas as $data){
             Rent::create([
                         'user_email' => Auth::user()->email,
                         'book_isbn' => $data,
-                        'rent_date' => Carbon::now(),
-                        'status' => true,
+                        'rent-date' => Carbon::now(),
+                        'due_date' => Carbon::now()->addDays(3)
                     ]);
         }
         return redirect ('/rent-current');
     }
 
-    public function update(Request $request)
+    public function update($id)
     {
-        $data = $request->all();
-        Rent::where('id', $data['id'])
+        Rent::where('id', $id)
                 ->update([
-                    'status' => 'done',
+                    'status' => false,
                     'due_date' => Carbon::now()]);
         return redirect ('/rent-history');
     }
@@ -60,7 +58,8 @@ class RentController extends Controller
         $data = $request->all();
         $isbn = $data['books'];
         $rents = Wishlist::where('user_email', Auth::user()->email)
-                ->where('book_isbn', $isbn[0])->get();
-        return view('review-peminjaman')->with('rents', $rents);
+                ->wherein('book_isbn', $isbn)->get();
+        return view('member.review-peminjaman')->with('rents', $rents);
     }
+
 }

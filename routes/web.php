@@ -27,7 +27,7 @@ Route::get('/search/{keyword}', [SearchController::class, 'type']);
 Route::get('/description/{isbn}', [BookController::class, 'index']);
 
 Route::get('/test', function () {
-    return view('profile');
+    return view('member.profile');
 });
 
 Route::middleware([
@@ -37,11 +37,10 @@ Route::middleware([
 ])->group(function () {
     Route::get('/rents', [RentController::class,'active'])->name('rents');
     Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist');
-    Route::get('/profile', function () {
-        return view('profile');
-    })->name('profile');
+    Route::get('/profile', function () {return view('member.profile');})->name('profile');
     Route::get('/rent-current', [RentController::class, 'active'])->name('rentcurrent');
     Route::get('/rent-history', [RentController::class, 'history'])->name('renthistory');
+    Route::get('/rent-delete/{id}', [RentController::class, 'update']);
     Route::get('/logout', [LogoutController::class, 'logout'])->name('loogout');
     Route::post('/rent/validation', [RentController::class, 'validation']);
     Route::post('/rent', [RentController::class, 'create']);

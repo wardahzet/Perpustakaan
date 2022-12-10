@@ -20,7 +20,7 @@ class HomeController extends Controller
             return redirect('/dashboard');
         }
 
-        return view('home')
+        return view('member.home')
             ->with('categories', $categories)
             ->with('newbooks', $book->sortBy('created_at'))
             ->with('recommendations', $book->sortBy('readers'))
@@ -33,7 +33,7 @@ class HomeController extends Controller
         $rentc = Rent::where('status', false)->count();
         $renth = Rent::where('status', true)->count();
         $rents = Rent::all()->sortBy('rent_date')->take(10);
-        return view ('dashboard')
+        return view ('admin.dashboard')
             ->with('book', $book)
             ->with('users', $users)
             ->with('rentc', $rentc)

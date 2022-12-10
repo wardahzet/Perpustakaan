@@ -1,64 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+@extends('member.mainLayout')
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"/>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-    <!-- Please DO NOT remove this line, all link and script tags will be merged to here -->
+@section('content')
 
-    <link rel="stylesheet" type="text/css" href="/css/common.css" />
-    <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="/css/tailwind.css" />
-
-    <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/px2code/posize/build/v1.01.0.js"></script>
-
-    @vite('resources/css/app.css')
-  </head>
-  <body>
-
-    <div class="relative bg-white">
-        <div class="relative bg-white">
-          <div class="mx-auto">
-            <div class="flex items-center mr-0 ml-0 justify-between border-b-2 border-gray-300 py-6 md:justify-start md:space-x-10">
-                <div class="mb-1 ml-8 flex justify-start lg:w-0 lg:flex-1">
-                    <a href="/">
-                    <span class="sr-only">E-Library</span>
-                    <img class="h-8 w-auto sm:h-10" src="https://i.ibb.co/XYThtt1/Logo-ELibrary.png" alt="">
-                    </a>
-                </div>
-            <div class="flex justify-end">
-                
-            <div class="container flex items-center ">
-              <form method="get" action="/src">
-                <input type="text" name="keyword" class="block -ml-20 mx-10 w-72 h-10 px-4 py-2 text-bas bg-clip-padding border-rounded transition ease-in-out focus:text-gray-700 focus:bg-gray-100 focus:border-[#EA9901] focus:outline-none   input-search bg-white-200 border-solid border-2 border-gray-300 rounded-2xl  text-gray-700" placeholder="Search" >
-              </form>
-              <button type="submit" class="bg-[#EA9901] px-5 py-2 rounded-lg">Search</button>
-            </div>
-            </div>
-            <div class="">
-            <nav class="space-x-10 md:flex">
-                <a href="{{ route('home')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Home</a>
-                <a href="{{ route('rents')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Rent</a>
-                <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Wishlist</a>
-                <a href="{{ route('profile')}}" class="text-base font-medium text-gray-500 hover:text-gray-900">Profile</a>
-            </nav>
-            </div>
-            <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-              <form method="POST" action="{{ route('logout') }}">
-                <button type='submit' class="mr-8 inline-flex items-center rounded-md border border-[#EA9901] bg-white px-4 py-2 text-base font-medium text-[#EA9901] shadow-sm hover:bg-gray-300">Logout</button>
-              </form>
-            </div>
-          </div>
-        </div>
-
+@if(count($wishlists) != 0)
   <form action="/rent/validation" method="post">
     @csrf
     <div class="content bg-200 my-10 mx-10">
@@ -143,6 +87,7 @@
 
     </script>
   </form>
-  <body>
-  </body>
-</html>
+  @else <h1 class="text-2xl font-medium text-gray-700 my-20 text-center">Tidak ada wishlist</h1>
+@endif
+
+  @endsection

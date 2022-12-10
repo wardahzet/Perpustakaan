@@ -21,8 +21,8 @@ return new class extends Migration
             STARTS (TIMESTAMP(CURRENT_DATE) + INTERVAL 1 DAY + INTERVAL 1 HOUR)
             ON COMPLETION PRESERVE
             DO
-                UPDATE `rents` SET `due_date` = CURRENT_TIMESTAMP()
-                WHERE TIMESTAMPDIFF(DAY, CURRENT_TIMESTAMP(), `rent_date`) > 3;
+                UPDATE `rents` SET `status` = false
+                WHERE TIMESTAMPDIFF(DAY, CURRENT_TIMESTAMP(), `due_date`) > 1;
         ');
     }
 

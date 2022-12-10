@@ -15,9 +15,8 @@
       <div class="container bg-[rgb(255,250,239)] flex px-10 rounded-lg py-5">
         <div class="nama-product   w-4/12 py-2 flex justify-center ">Name Product</div>
         <div class="ISBN   w-2/12 py-2 flex justify-center">ISBN</div>
-        <div class="rent-date   w-2/12 py-2 flex justify-center ">Rent Date</div>
-        <div class="due-date   w-2/12 py-2 flex justify-center">Due Date</div>
-        <div class="return-date   w-2/12 py-2 flex justify-center" >Return Date</div>
+        <div class="rent-date   w-3/12 py-2 flex justify-center ">Rent Date</div>
+        <div class="return-date   w-3/12 py-2 flex justify-center" >Return Date</div>
       </div>
       <br>
 
@@ -32,9 +31,8 @@
         <div class="name-title  flex items-center font-semibold">{{$r->books['title']}}</div>
       </div>
       <div class="ISBN   w-2/12 py-5 flex items-center justify-center">{{$r['book_isbn']}}</div>
-      <div class="rent-date   w-2/12 py-5 flex items-center justify-center">{{$r['rent_date']}}</div>
-      <div class="due-date  w-2/12 py-5 flex items-center justify-center">{{$r['due_date']}}</div>
-      <div class="return-date  w-2/12 py-5 flex items-center justify-center">{{$r['return_date']}}</div>
+      <div class="rent-date   w-3/12 py-5 flex items-center justify-center">{{$r['rent_date']}}</div>
+      <div class="return-date  w-3/12 py-5 flex items-center justify-center">{{$r['due_date']}}</div>
 
     </div>
     @endforeach

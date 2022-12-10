@@ -37,7 +37,7 @@
                             src="https://i.ibb.co/vxVdkPg/60111.jpg" 
                             alt="">
                     </div>
-                    <h1 class="mt-8 text-gray-900 font-bold text-xl leading-8 my-1">Lionel Messi</h1>
+                    <h1 class="mt-8 text-gray-900 font-bold text-xl leading-8 my-1">{{Auth::user()->name}}</h1>
                     <h3 class="text-gray-600 font-lg text-semibold leading-6">Student at Brawijaya University</h3>
                     <p class="text-sm text-gray-500 hover:text-gray-600 leading-6">Lorem ipsum dolor sit amet
                         consectetur adipisicing elit.
@@ -75,21 +75,25 @@
                         <div class="grid md:grid-cols-2 text-sm">
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Name</div>
-                                <div class="px-4 py-2">Lionel</div>
+                                <div class="px-4 py-2">{{Auth::user()->name}}</div>
                             </div>
                             
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Contact No.</div>
-                                <div class="px-4 py-2">+62 998001001</div>
+                                <div class="px-4 py-2">{{Auth::user()->telephone}}</div>
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Address</div>
-                                <div class="px-4 py-2">Malang, Jawa Timur</div>
+                                @if (Auth::user()->address != null)
+                                <div class="px-4 py-2">{{Auth::user()->address}}</div>
+                                @else
+                                <div class="px-4 py-2">-</div>
+                                @endif
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Email.</div>
                                 <div class="px-4 py-2">
-                                    <a class="text-blue-800" href="mailto:messi@gmail.com">Messi@gmail.com</a>
+                                    <a class="text-blue-800" href="{{Auth::user()->email}}">{{Auth::user()->email}}</a>
                                 </div>
                             </div>
                           

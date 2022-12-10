@@ -17,15 +17,11 @@ class SearchController extends Controller
 
     public function keywords(Request $request)
     {
-        $keyword = $request->all();
-        
-        if ($keyword) {
-            $this->books = $this->books->filter(function ($book) use ($keyword) {
-                return in_array($book->title, $keyword);
-            });
-        }
-
-        return view('member.searchResult')->with('books', $this->books);
+        $keyword = $request->keyword;
+        $book = Book::where('title', 'LIKE', "%$keyword%")->
+                orWhere('author', 'LIKE', "%$keyword%")->
+                orWhere('publisher', 'LIKE', "%$keyword%")->get();
+        return view('member.searchResult')->with('books', $book);
     }
 
     public function category($keywords)
@@ -33,6 +29,7 @@ class SearchController extends Controller
         $this->books = $this->books->where('category_id',$keywords);
         return view('member.searchResult')->with('books', $this->books);
     }
+    
     public function type($keywords)
     {
         if ($keywords == 'newbooks') 

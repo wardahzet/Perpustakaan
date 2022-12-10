@@ -84,14 +84,40 @@
         </nav>
     </div>
 </div>
-<div class="content flex py-5 mb-5 mx-20 border-solid border-black">
-    
+<form action="/rent/validation" method="post">
+    @csrf
+    <div class="content bg-200 my-10 mx-10">
+      <div class="container bg-[rgb(255,250,239)] flex px-10 rounded-lg py-5">
+        <div class="nama-product   w-4/12 py-2 flex justify-center ">Name Product</div>
+        <div class="ISBN   w-2/12 py-2 flex justify-center">ISBN</div>
+        <div class="rent-date   w-2/12 py-2 flex justify-center ">Rent Date</div>
+        <div class="due-date   w-2/12 py-2 flex justify-center">Due Date</div>
+        <div class="Aksi   w-2/12 py-2 flex justify-center" >Aksi</div>
+      </div>
+      <br>
+
+        <div class="content" name="books[]">
+
     @foreach ($rent as $r)
-    <div class="image-1 mr-8">
-        <img src="{{$r -> books['cover']}}" alt="">
-    </div>
+    <div class="container bg-[rgb(255,250,239)] flex px-10 rounded-lg ">
+            <div class="nama-product  w-4/12 py-5 flex">
+              <div class="image  mr-5">
+                <img src="{{$r->books['cover']}}" alt="">
+              </div>
+              <div class="name-title  flex items-center font-semibold">{{$r->books['title']}}</div>
+            </div>
+            <div class="ISBN   w-2/12 py-5 flex items-center justify-center">{{$r->books['book_isbn']}}</div>
+            <div class="rent-date   w-2/12 py-5 flex items-center justify-center">{{$r->books['rent_date']}}</div>
+            <div class="due-date  w-2/12 py-5 flex items-center justify-center">{{$r->books['due_date']}}</div>
+            <div class="button w-2/12 py-20 justify-center items-center">
+              <button type="button" class="delete bg-[rgb(234,153,1)]-500 px-6 py-2 rounded-xl  bg-[#EA9901] focus:border-solid focus:bg-white focus:border-[#EA9901] focus:border-2" >Return</button>
+            </div>
+          </div>
     @endforeach
-</div>
+
+    </div>
+      </div>
+    <br>
 <script> console.log('$rent');
     </script>
 </body>

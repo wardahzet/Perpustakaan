@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
 use App\Models\Book;
 use App\Models\Category;
-use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,9 +12,11 @@ class BookController extends Controller
     public function index($isbn)
     {
         $book = Book::find($isbn);
-
+        $like = Book::where('category_id', $book->category_id)
+                ->where('isbn','!=', $isbn)->get()->random(1)->first();
         return view('member.bookDetails')
-                ->with('book', $book);
+                ->with('book', $book)
+                ->with('like', $like);
     }
 
     public function showEdit($isbn)

@@ -85,6 +85,15 @@
           document.getElementById("button").innerHTML = '<button type="submit" class="checkout bg-[rgb(234,153,1)]-500 px-16 py-4 rounded-xl  bg-[#EA9901] focus:border-solid focus:bg-white focus:border-[#EA9901] focus:border-2" >Check Out (-)</button>';
       }
 
+      function reset() {
+        get = document.querySelectorAll(".check3");
+        for(var i=0; i<get.length; i++) {
+          get[i].checked = false;
+        }
+        document.getElementById("button").innerHTML = '<button type="submit" class="checkout bg-[rgb(234,153,1)]-500 px-16 py-4 rounded-xl  bg-gray-500 focus:border-solid focus:bg-white focus:border-gray-300 focus:border-2" disabled >Check Out (-)</button>';
+        $count = {{$count}};
+      }
+
     </script>
   </form>
   @else <h1 class="text-2xl font-medium text-gray-700 my-20 text-center">Tidak ada wishlist</h1>

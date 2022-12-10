@@ -22,9 +22,9 @@ class HomeController extends Controller
 
         return view('member.home')
             ->with('categories', $categories)
-            ->with('newbooks', $book->sortBy('created_at'))
-            ->with('recommendations', $book->sortBy('readers'))
-            ->with('populars', $book->sortBy('reading'));
+            ->with('newbooks', $book->sortBy('created_at')->take(10))
+            ->with('recommendations', $book->sortBy('readers')->take(10))
+            ->with('populars', $book->sortBy('views')->take(10));
     }
 
     public function dashboard(){

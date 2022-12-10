@@ -28,7 +28,7 @@
 
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
-                  <p class="mb-12 font-normal text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
                   <div class="mb-4">
                     <label for="" email="text-md font-medium ">Email</label>
                     <input
@@ -48,7 +48,7 @@
                     />
                   </div>
                   
-                      <a class="text-[#EA9901] flex justify-end mb-3 text-sm  " href="#!" >Forgot password?</a>
+                      <a class="text-[#EA9901] flex justify-end mb-3 text-sm  " href="{{ route('password.request') }}" >Forgot password?</a>
                   
                   <div class="text-center pt-1 mb-10 pb-1">
                     <button

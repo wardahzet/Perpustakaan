@@ -20,11 +20,111 @@
     .border-main-color {
         border-color: var(--main-color);
     }
+.popup-form, 
+.popup-data{
+    position:absolute;
+    top:50%;
+    left:50%;
+    opacity:0;
+    transform:translate(-50%, -50%) scale(0.15);
+    width:500px;
+    padding:20px 30px;
+    background:#fff;
+    border:1px solid;
+    border-radius:10px;
+    transition:top 0ms ease-in-out 100ms,
+        opacity 100ms ease-in-out 0ms,
+        transform 100ms ease-in-out 0ms;
+}
+
+.popup-form.active, 
+.popup-data.active{
+    top:50%;
+    opacity:1;
+    transform:translate(-50%, -50%) scale(1);
+    transition:top 0ms ease-in-out 0ms,
+        opacity 100ms ease-in-out 0ms,
+        transform 100ms ease-in-out 0ms;
+}
+
+.close-btn{
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:15px;
+    height:15px;
+    background:#888;
+    color:#eee;
+    text-align:center;
+    line-height:15px;
+    border-radius:15px;
+    cursor:pointer;
+}
+
+.popup-form .form h2 {
+    text-align:center;
+    color:#222;
+    margin:10px 0px 20px;
+    font-size:25px;
+}
+
+.popup-form .form .form-element {
+    margin:15px 0px;
+}
+
+.popup-form .form .form-element label {
+    font-size:14px;
+    color:#222;
+}
+
+.popup-form .form .form-element input[type="text"],
+.popup-form .form .form-element input[type="number"],
+.popup-form .form .form-element input[type="password"]{
+    margin-top: 5px;
+    display:block;
+    width:100%;
+    padding:10px;
+    outline:none;
+    border:1px solid #aaa;
+    border-radius:5px;
+}
 </style>
 <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
 
+<div class="popup-form">
+    <button  onclick="setform(false)" class="absolute right-2.5 bg-[#EA9901] text-white hover:bg-[#BF7D01] py-2 px-3.5 rounded-full hover:bg-[#BF7D01] focus:outline-none focus:shadow-outline font-medium" type="button"
+    >&times;
+</button>
+    
+    <div class="form">
+        <h2 id="header-form"></h2>
+        <form method="post" action="{{'/user/update'}}">
+            @csrf
+            <div class="form-element">
+                <label for="name">Nama</label>
+                <input type="text" name="name" value="{{Auth::user()->name}}">
+            </div>
+            <div class="form-element">
+                <label for="email">Email</label>
+                <input type="text" name="email" value="{{Auth::user()->email}}">
+            </div>
+            <div class="form-element">
+                <label for="sks">Nomor Telephone</label>
+                <input type="number" name="telephone" value="{{Auth::user()->telephone}}">
+            </div>
+            <div class="form-element">
+                <label for="sks">Alamat</label>
+                <input type="text" name="address" value="{{Auth::user()->address}}">
+            </div>
+            <button type="submit"
+                        class="block w-full text-base font-semibold text-white bg-[#EA9901] mt-5 py-3 px-8 rounded-full hover:bg-[#BF7D01] focus:outline-none focus:shadow-outline font-medium">
+                        Edit Profile
+            </button>
+        </form>
+    </div>
+</div>
 
     <div class="container mx-auto my-5 p-5">
         <div class="md:flex no-wrap md:-mx-2 ">
@@ -39,9 +139,7 @@
                     </div>
                     <h1 class="mt-8 text-gray-900 font-bold text-xl leading-8 my-1">{{Auth::user()->name}}</h1>
                     <h3 class="text-gray-600 font-lg text-semibold leading-6">Student at Brawijaya University</h3>
-                    <p class="text-sm text-gray-500 hover:text-gray-600 leading-6">Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit.
-                        Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non deserunt</p>
+
                     <ul
                         class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
                         <li class="flex items-center py-3">
@@ -100,7 +198,7 @@
                         </div>
                     </div>
                 </div>
-                <button
+                <button onclick="setform(true)"
                         class="block w-full text-base font-semibold text-white bg-[#EA9901] mt-5 py-3 px-8 rounded-full hover:bg-[#BF7D01] focus:outline-none focus:shadow-outline font-medium">
                         Edit Profile
                 </button>
@@ -115,5 +213,17 @@
         </div>
     </div>
 </div>
-
+<script>
+    function setform(status) {
+        if (status) {
+            document.querySelector(".popup-form").classList.add("active");
+        }
+        else {
+            document.querySelector(".popup-form").classList.remove("active");
+            document.getElementById("fname").value = null;
+            document.getElementById("bname").value = null;
+            document.getElementById("sks").value = null;
+        }
+}
+</script>
 @endsection

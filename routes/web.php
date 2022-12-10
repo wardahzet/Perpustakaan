@@ -6,6 +6,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RentController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\UserUpdate;
+use App\Http\Controllers\UserUpdateController;
 use App\Http\Controllers\WishlistController;
 
 /*
@@ -38,11 +40,11 @@ Route::middleware([
     Route::get('/rent-current', [RentController::class, 'active'])->name('rentcurrent');
     Route::get('/rent-history', [RentController::class, 'history'])->name('renthistory');
     Route::get('/rent-delete/{id}', [RentController::class, 'update']);
-    Route::get('/logout', [LogoutController::class, 'logout'])->name('loogout');
     Route::post('/rent/validation', [RentController::class, 'validation']);
     Route::post('/rent', [RentController::class, 'create']);
     Route::get('/wishlist/delete/{isbn}', [WishlistController::class, 'destroy']);
     Route::get('/wishlist/store/{isbn}', [WishlistController::class, 'store']);
+    Route::post('/user/update', [UserUpdateController::class, 'update']);
 });
 
 
@@ -52,7 +54,6 @@ Route::middleware([
     'verified', 'isadmin'
 ])->group(function (){
     Route::get('/dashboard', [HomeController::class, 'dashboard']);
-    Route::get('/logout', [LogoutController::class, 'logout'])->name('loogout');
     Route::post('/book/store', [BookController::class, 'store']);
     Route::get('/book/data/{book}', [BookController::class, 'data'])->name('bookData');
     Route::get('/book/create', [BookController::class, 'showCreate']);

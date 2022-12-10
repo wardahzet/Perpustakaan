@@ -30,7 +30,6 @@
 
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
-                  <p class="mb-12 font-normal text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                   <div class="mb-4">
                     <label for="name" class="text-md font-medium ">Full Name</label>
                     <input

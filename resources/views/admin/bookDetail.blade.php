@@ -78,32 +78,29 @@
         <div class="detail-book flex my-10">
 
           <div class="  w-6/12 ">
-            <a href="https://ibb.co/SmVMvXW"><img src="https://i.ibb.co/4S4XNZ9/b7a9f651ba4bdf1d4b66b6e400737e84.jpg" alt="b7a9f651ba4bdf1d4b66b6e400737e84" border="0"></a>
+            <img src="{{$book['cover']}}" alt="b7a9f651ba4bdf1d4b66b6e400737e84" border="0">
 
           </div>
           <div class=" w-6/12 px-10 ">
-          <div class="title-book font-bold text-2xl mb-5 ">Bulan-Tere Liye-2020</div>
-          <div class="views mb-5">1240 view</div>
-          <div class="title-segment font-semibold text-lg mb-5">ISBN</div>
-          <div class="isi-segment mb-5">AC-23450</div>
-          <div class="title-segment font-semibold text-lg mb-5">Penulis</div>
-          <div class="isi-segment mb-5">Tere Liye</div>
-          <div class="title-segment font-semibold text-lg mb-5">Penerbit</div>
-          <div class="isi-segment mb-5">Gramedia</div>
-           <div class="title-segment font-semibold text-lg mb-5">Tahun Terbit</div>
-          <div class="isi-segment mb-5">2022</div>
-           <div class="title-segment font-semibold text-lg mb-5">Kategories</div>
-          <div class="isi-segment mb-5">Fiction</div>
-
+            <div class="title-book font-bold text-2xl mb-5 ">{{$book->title}}</div>
+            <div class="views mb-5">{{$book->views}}</div>
+            <div class="title-segment font-semibold text-lg mb-5">ISBN</div>
+            <div class="isi-segment mb-5">{{$book->isbn}}</div>
+            <div class="title-segment font-semibold text-lg mb-5">Penulis</div>
+            <div class="isi-segment mb-5">{{$book->author}}</div>
+            <div class="title-segment font-semibold text-lg mb-5">Penerbit</div>
+            <div class="isi-segment mb-5">{{$book->publisher}}</div>
+             <div class="title-segment font-semibold text-lg mb-5">Tahun Terbit</div>
+            <div class="isi-segment mb-5">{{$book->year}}</div>
+             <div class="title-segment font-semibold text-lg mb-5">Kategories</div>
+            <div class="isi-segment mb-5">{{$book->category->name}}</div>
           </div>
         </div>
 
-          <div class="title-book font-bold text-2xl mb-5 ">Bulan-Tere Liye-2020</div>
-          <div class="isi-segment mb-5">Fiction Books</div>
+          <div class="title-book font-bold text-2xl mb-5 ">{{$book->title}}-{{$book->author}}-{{$book->year}}</div>
+          <div class="isi-segment mb-5">{{$book->category->name}} Books</div>
            <div class="title-segment font-semibold text-lg mb-5">Sinopsis</div>
-          <div class="isi-segment mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
-              Curabitur tempor quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna. Nam metus lacus, porttitor eu mauris a, blandit ultrices nibh. Mauris sit amet magna non ligula vestibulum eleifend. Nulla varius volutpat turpis sed lacinia. Nam eget mi in purus lobortis eleifend. Sed nec ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin vitae facilisis nisi, ac posuere leo.
-             </div>
+          <div class="isi-segment mb-5">{{$book->synopsis}}</div>
 
         </div>
       </div>

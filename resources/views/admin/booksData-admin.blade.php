@@ -95,7 +95,8 @@
   <tr class="justify-center">
     <td class="py-5 ">{{$book['title']}}</td>
     <td class= "py-5">
-      <a href="/book/edit/{{$book['isbn']}}"><button class="bg-gray-300 px-5 py-1 rounded-md ">edit</button></a>
+      <a href="/book/view/{{$book['isbn']}}"><button class="bg-blue-400 px-5 py-1 rounded-md ">View</button></a>
+      <a href="/book/edit/{{$book['isbn']}}"><button class="bg-gray-300 px-5 py-1 rounded-md ">Edit</button></a>
       <a href="/book/delete/{{$book['isbn']}}"><button class="bg-red-400 px-5 py-1 rounded-md ">Hapus</button></a>
     </td>
    

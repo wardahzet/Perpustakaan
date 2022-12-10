@@ -26,9 +26,6 @@ Route::get('/search/Category/{keyword}', [SearchController::class, 'category']);
 Route::get('/search/{keyword}', [SearchController::class, 'type']);
 Route::get('/description/{isbn}', [BookController::class, 'index']);
 
-Route::get('/test', function () {
-    return view('member.profile');
-});
 
 Route::middleware([
     'auth:sanctum',
@@ -61,15 +58,8 @@ Route::middleware([
     Route::get('/book/create', [BookController::class, 'showCreate']);
     Route::get('/book-detail/{isbn}', [BookController::class,'show']);
     Route::get('/book/edit/{isbn}', [BookController::class,'showEdit']);
+    Route::get('/book/view/{isbn}', [BookController::class,'view']);
     Route::post('/book/update', [BookController::class, 'update']);
     Route::get('/book/delete/{isbn}', [BookController::class, 'destroy']);
     Route::get('/book/all', [BookController::class, 'showAll']);
 });
-
-Route::get('/detailRent', function () {
-    return view('detailRent');
-});
-Route::get('/registrasi', function () {
-    return view('registrasi');
-});
-

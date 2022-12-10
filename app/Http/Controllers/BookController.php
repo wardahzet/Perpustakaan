@@ -67,4 +67,12 @@ class BookController extends Controller
         $categories = Category::all();
         return view('admin.inputBooks')->with('categories', $categories);
     }
+
+    public function view($isbn)
+    {
+        $book = Book::find($isbn);
+
+        return view('admin.bookDetail')
+                ->with('book', $book);
+    }
 }

@@ -30,8 +30,8 @@ class HomeController extends Controller
     public function dashboard(){
         $book = Book::all()->count();
         $users = User::where('is_admin', false)->get();
-        $rentc = Rent::where('status', false)->count();
-        $renth = Rent::where('status', true)->count();
+        $rentc = Rent::where('status', true)->count();
+        $renth = Rent::where('status', false)->count();
         $rents = Rent::all()->sortBy('rent_date')->take(10);
         return view ('admin.dashboard')
             ->with('book', $book)

@@ -99,7 +99,7 @@
     <h2 class="text-2xl font-semibold ">New Books</h2>
       <div class="button-title ml-auto">
         <form action="/search/newbooks">
-          <button type="submit" bg-[#EA9901] rounded-2xl px-5 py-1 text-base font-semibold text-white hover:bg-[#BF7D01]">See All</button>
+          <button type="submit" class="bg-[#EA9901] rounded-2xl px-5 py-1 text-base font-semibold text-white hover:bg-[#BF7D01]">See All</button>
         </form>
       </div>
     </div>

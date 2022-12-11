@@ -22,7 +22,7 @@ return new class extends Migration
             ON COMPLETION PRESERVE
             DO
                 UPDATE `rents` SET `status` = false
-                WHERE TIMESTAMPDIFF(DAY, CURRENT_TIMESTAMP(), `due_date`) > 1;
+                WHERE due_date > DATE_SUB(NOW(), INTERVAL 1 DAY)
         ');
     }
 
